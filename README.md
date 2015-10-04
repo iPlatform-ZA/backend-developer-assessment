@@ -19,12 +19,6 @@ The API you will be writing provides information about artists and their release
 The API needs to provide the following endpoints:
 *	```/artist/search/<search_criteria>/<page_number>/<page_size>``` as a GET. 
 
-The search criteria will be used to search the SQL Server database. The ```page_number``` and ```page_size``` parameters are used for the pagination of the search results. 
-
-The search should return all artist whose name or alias starts with the search criteria. The search should also return pagination information allowing for paging through the search results.
-
-The Excel spreadsheet in the docs folder contains information about 16 artists. The data in the spreasheet needs to be imported into a SQL Server database and used when searching for artists
-
 	*	```/artist/search/joh``` should return John Coltrane, John Mayer, Johnny Cash, Elton John and John Frusciante
 		*	The response should contain the following information either in JSON or XML
 			*	Artist name
@@ -51,6 +45,13 @@ The Excel spreadsheet in the docs folder contains information about 16 artists. 
 			"numberOfPages": "1"
 	}
 ```		
+
+The search criteria will be used to search the SQL Server database. The ```page_number``` and ```page_size``` parameters are used for the pagination of the search results. 
+
+The search should return all artist whose name or alias starts with the search criteria. The search should also return pagination information allowing for paging through the search results.
+
+The Excel spreadsheet in the docs folder contains information about 16 artists. The data in the spreasheet needs to be imported into a SQL Server database and used when searching for artists
+
 		
 *	```/artist/<artist_id>/releases``` as a GET. This endpoint will return all the releases for a selected artist where the artist_id uniquely identifies an artist in the SQL Server database and MusicBrainz API
 
