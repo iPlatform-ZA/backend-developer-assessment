@@ -56,39 +56,39 @@
     <Compile Include="DTO\ArtistCreditDTO.cs" />
     <Compile Include="DTO\ReleaseDTO.cs" />
     <Compile Include="DTO\ReleaseInfoDTO.cs" />
-    <Compile Include="ThirdParty\MusicBrainz\Artist\MBCoverArtArchiveDTO.cs">
+    <Compile Include="ThirdParty\MusicBrainz\ArtistAPI\MBCoverArtArchiveDTO.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ThirdParty\MusicBrainz\Artist\MBLabelInfoDTO.cs" />
-    <Compile Include="ThirdParty\MusicBrainz\Artist\MBLabelDTO.cs" />
-    <Compile Include="ThirdParty\MusicBrainz\Artist\MBLifeSpanDTO.cs" />
-    <Compile Include="ThirdParty\MusicBrainz\Artist\MBAreaDTO.cs">
+    <Compile Include="ThirdParty\MusicBrainz\ArtistAPI\MBLabelInfoDTO.cs" />
+    <Compile Include="ThirdParty\MusicBrainz\ArtistAPI\MBLabelDTO.cs" />
+    <Compile Include="ThirdParty\MusicBrainz\ArtistAPI\MBLifeSpanDTO.cs" />
+    <Compile Include="ThirdParty\MusicBrainz\ArtistAPI\MBAreaDTO.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ThirdParty\MusicBrainz\Artist\MBArtistCreditDTO.cs">
+    <Compile Include="ThirdParty\MusicBrainz\ArtistAPI\MBArtistCreditDTO.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ThirdParty\MusicBrainz\Artist\MBArtistDTO.cs">
+    <Compile Include="ThirdParty\MusicBrainz\ArtistAPI\MBArtistDTO.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ThirdParty\MusicBrainz\Artist\MBArtistReleaseDTO.cs" />
+    <Compile Include="ThirdParty\MusicBrainz\ArtistAPI\MBArtistReleaseDTO.cs" />
     <Compile Include="DTO\AliasDTO.cs" />
     <Compile Include="DTO\AlbumDTO.cs" />
     <Compile Include="DTO\ArtistDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ThirdParty\MusicBrainz\Artist\MBMediaDTO.cs">
+    <Compile Include="ThirdParty\MusicBrainz\ArtistAPI\MBMediaDTO.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ThirdParty\MusicBrainz\Artist\MBReleaseDTO.cs">
+    <Compile Include="ThirdParty\MusicBrainz\ArtistAPI\MBReleaseDTO.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ThirdParty\MusicBrainz\Artist\MBReleaseEventsDTO.cs">
+    <Compile Include="ThirdParty\MusicBrainz\ArtistAPI\MBReleaseEventsDTO.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ThirdParty\MusicBrainz\Artist\MBTextRepresentationDTO.cs">
+    <Compile Include="ThirdParty\MusicBrainz\ArtistAPI\MBTextRepresentationDTO.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ThirdParty\MusicBrainz\Release\MBReleaseInfoDTO.cs" />
+    <Compile Include="ThirdParty\MusicBrainz\ReleaseAPI\MBReleaseInfoDTO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
