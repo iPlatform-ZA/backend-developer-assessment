@@ -138,6 +138,8 @@ publish/
 *.nupkg
 # The packages folder can be ignored because of Package Restore
 **/packages/*
+#!**/packages/NUnit.2.6.4
+
 # except build/, which is used as an MSBuild target.
 !**/packages/build/
 # Uncomment if necessary however generally it will be regenerated when needed
@@ -194,3 +196,5 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
+
+!**/Assessment.Models/ThirdParty/MusicBrainz/Release/*
