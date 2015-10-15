@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4C95CCAD-784A-4F59-93D9-2900479E1FB8}"
+	ProjectSection(SolutionItems) = preProject
+		StructureItSql.txt = StructureItSql.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App.Web", "App.Web", "{9FFF16E4-3E4B-45A0-819D-5D3D21525685}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App.Services", "App.Services", "{61E601A8-67AB-4D97-B436-51E553EFD836}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App.EntityFramework", "App.EntityFramework", "{B1B3413F-AC6A-4A0D-AECC-8CD16429B0AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MusicBrainzApi", "MusicBrainzApi", "{B889F5DE-279E-4835-AF13-E9183B00FA31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.EntityFramework", "..\..\..\..\Documents\Visual Studio 2012\Projects\StructureAssessment\App.EntityFramework\App.EntityFramework.csproj", "{EB1935E1-46F6-4C60-A19D-1C48B67D2879}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Services", "..\..\..\..\Documents\Visual Studio 2012\Projects\StructureAssessment\App.Services\App.Services.csproj", "{C46DB67E-A909-43F8-BDA5-EDDDB4C9D1E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Web", "..\..\..\..\Documents\Visual Studio 2012\Projects\StructureAssessment\App.Web\App.Web.csproj", "{9CE94BD5-F6EE-4266-99DD-F793DB3FE501}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicBrainzApi", "..\..\..\..\Documents\Visual Studio 2012\Projects\StructureAssessment\MusicBrainzApi\MusicBrainzApi.csproj", "{368674C9-585F-4C01-A1EF-D271053D792A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB1935E1-46F6-4C60-A19D-1C48B67D2879}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB1935E1-46F6-4C60-A19D-1C48B67D2879}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB1935E1-46F6-4C60-A19D-1C48B67D2879}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB1935E1-46F6-4C60-A19D-1C48B67D2879}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C46DB67E-A909-43F8-BDA5-EDDDB4C9D1E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C46DB67E-A909-43F8-BDA5-EDDDB4C9D1E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C46DB67E-A909-43F8-BDA5-EDDDB4C9D1E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C46DB67E-A909-43F8-BDA5-EDDDB4C9D1E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CE94BD5-F6EE-4266-99DD-F793DB3FE501}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CE94BD5-F6EE-4266-99DD-F793DB3FE501}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CE94BD5-F6EE-4266-99DD-F793DB3FE501}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CE94BD5-F6EE-4266-99DD-F793DB3FE501}.Release|Any CPU.Build.0 = Release|Any CPU
+		{368674C9-585F-4C01-A1EF-D271053D792A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{368674C9-585F-4C01-A1EF-D271053D792A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{368674C9-585F-4C01-A1EF-D271053D792A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{368674C9-585F-4C01-A1EF-D271053D792A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9CE94BD5-F6EE-4266-99DD-F793DB3FE501} = {9FFF16E4-3E4B-45A0-819D-5D3D21525685}
+		{C46DB67E-A909-43F8-BDA5-EDDDB4C9D1E2} = {61E601A8-67AB-4D97-B436-51E553EFD836}
+		{EB1935E1-46F6-4C60-A19D-1C48B67D2879} = {B1B3413F-AC6A-4A0D-AECC-8CD16429B0AF}
+		{368674C9-585F-4C01-A1EF-D271053D792A} = {B889F5DE-279E-4835-AF13-E9183B00FA31}
+	EndGlobalSection
+EndGlobal
