@@ -1,0 +1,12 @@
+C:\Users\Ronald\data\MyDocuments\Qualifications\IPlatform BE Proj\BEAssessment\backend-developer-assessment\Persistance\bin\Debug\Persistance.dll.config
+C:\Users\Ronald\data\MyDocuments\Qualifications\IPlatform BE Proj\BEAssessment\backend-developer-assessment\Persistance\bin\Debug\Persistance.dll
+C:\Users\Ronald\data\MyDocuments\Qualifications\IPlatform BE Proj\BEAssessment\backend-developer-assessment\Persistance\bin\Debug\Persistance.pdb
+C:\Users\Ronald\data\MyDocuments\Qualifications\IPlatform BE Proj\BEAssessment\backend-developer-assessment\Persistance\bin\Debug\Domain.dll
+C:\Users\Ronald\data\MyDocuments\Qualifications\IPlatform BE Proj\BEAssessment\backend-developer-assessment\Persistance\bin\Debug\EntityFramework.dll
+C:\Users\Ronald\data\MyDocuments\Qualifications\IPlatform BE Proj\BEAssessment\backend-developer-assessment\Persistance\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ronald\data\MyDocuments\Qualifications\IPlatform BE Proj\BEAssessment\backend-developer-assessment\Persistance\bin\Debug\Domain.pdb
+C:\Users\Ronald\data\MyDocuments\Qualifications\IPlatform BE Proj\BEAssessment\backend-developer-assessment\Persistance\bin\Debug\EntityFramework.xml
+C:\Users\Ronald\data\MyDocuments\Qualifications\IPlatform BE Proj\BEAssessment\backend-developer-assessment\Persistance\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ronald\data\MyDocuments\Qualifications\IPlatform BE Proj\BEAssessment\backend-developer-assessment\Persistance\obj\Debug\Persistance.csprojResolveAssemblyReference.cache
+C:\Users\Ronald\data\MyDocuments\Qualifications\IPlatform BE Proj\BEAssessment\backend-developer-assessment\Persistance\obj\Debug\Persistance.dll
+C:\Users\Ronald\data\MyDocuments\Qualifications\IPlatform BE Proj\BEAssessment\backend-developer-assessment\Persistance\obj\Debug\Persistance.pdb

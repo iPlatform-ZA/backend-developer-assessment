@@ -1,0 +1,5 @@
+C:\Users\Ronald\data\MyDocuments\Qualifications\IPlatform BE Proj\BEAssessment\backend-developer-assessment\Domain\bin\Debug\Domain.dll
+C:\Users\Ronald\data\MyDocuments\Qualifications\IPlatform BE Proj\BEAssessment\backend-developer-assessment\Domain\bin\Debug\Domain.pdb
+C:\Users\Ronald\data\MyDocuments\Qualifications\IPlatform BE Proj\BEAssessment\backend-developer-assessment\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
+C:\Users\Ronald\data\MyDocuments\Qualifications\IPlatform BE Proj\BEAssessment\backend-developer-assessment\Domain\obj\Debug\Domain.dll
+C:\Users\Ronald\data\MyDocuments\Qualifications\IPlatform BE Proj\BEAssessment\backend-developer-assessment\Domain\obj\Debug\Domain.pdb
