@@ -8,7 +8,7 @@ namespace Domain
 {
     public class Elias
     {
-        public int Id { get; set; }
+        public int  Id { get; set; }
         public string EliasName { get; set; }
         public virtual int  ArtistId { get; set; }
 
