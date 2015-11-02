@@ -73,8 +73,8 @@ namespace IplatformBEAssessment.Controllers
 
                 var xDoc = XDocument.Parse(xmlString);
                 XElement root = xDoc.Root;
-
                 var releases = new List<ReleaseDTO>();
+
                 foreach (var element in root.Elements().FirstOrDefault().Elements())
                 {
                     ReleaseDTO release = new ReleaseDTO();
