@@ -140,7 +140,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Helpers\" />
     <Folder Include="Infrastructure\" />
   </ItemGroup>
   <ItemGroup>
@@ -183,6 +182,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\OtherArtists.cs" />
     <Compile Include="Models\ArtistViewModel.cs" />
     <Compile Include="Models\DTOs\ArtistDTO.cs" />
     <Compile Include="Models\DTOs\EliasDTO.cs" />
