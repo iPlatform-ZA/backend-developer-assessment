@@ -1,3 +1,13 @@
+# Developer Notes
+
+## Database Creation Scripts
+* The database script can be found in the BDA/SqlScripts called CreateDatabase.sql
+* This will create a database called Artists with an Artists table with the relevant data.
+
+
+## Connection String Config
+* Update the ***ArtistsEntities*** connection string in the various configs (BDA/web.config and BDA.UnitTests/app.config)
+
 # Technical assessment for backend developer
 
 ## The purpose of the assessment is to test your ability:
