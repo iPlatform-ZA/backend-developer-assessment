@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDA", "BDA\BDA.csproj", "{4C03277E-2689-4C27-B205-22B222443EF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDA.Context", "BDA.Context\BDA.Context.csproj", "{0EC29FB0-F779-4DAD-A9FD-83BA654DF7C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDA.UnitTests", "BDA.UnitTests\BDA.UnitTests.csproj", "{F305418F-7862-4E80-8532-7257F885E8D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{31B9B1EE-1CA4-4C7F-96E7-01B0863FCE05}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C03277E-2689-4C27-B205-22B222443EF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C03277E-2689-4C27-B205-22B222443EF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C03277E-2689-4C27-B205-22B222443EF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C03277E-2689-4C27-B205-22B222443EF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EC29FB0-F779-4DAD-A9FD-83BA654DF7C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EC29FB0-F779-4DAD-A9FD-83BA654DF7C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EC29FB0-F779-4DAD-A9FD-83BA654DF7C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EC29FB0-F779-4DAD-A9FD-83BA654DF7C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F305418F-7862-4E80-8532-7257F885E8D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F305418F-7862-4E80-8532-7257F885E8D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F305418F-7862-4E80-8532-7257F885E8D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F305418F-7862-4E80-8532-7257F885E8D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
