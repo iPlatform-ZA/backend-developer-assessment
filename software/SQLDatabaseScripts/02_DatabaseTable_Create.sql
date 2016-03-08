@@ -1,0 +1,30 @@
+USE [ArtistDB]
+GO
+
+/****** Object:  Table [dbo].[Artist]    Script Date: 3/8/2016 4:06:15 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Artist](
+	[Id] [uniqueidentifier] NOT NULL,
+	[Name] [varchar](100) NOT NULL,
+	[CountryCode] [char](2) NOT NULL,
+	[Aliases] [nvarchar](250) NULL,
+ CONSTRAINT [PK_Artist] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
