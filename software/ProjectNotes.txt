@@ -1,0 +1,25 @@
+##WebApi (Server Side)
+
+#Deployment:
+1. Run the SQL server script to create the database and tables. (01_DatabaseStructure_Create.sql)
+2. Run the SQL server script to create the table. (02_DatabaseTable_Create.sql)
+3. Run the SQL server scripts to insert data into the table. (03_StaticData_Artists)
+4. Deploy the webapi onto IIS. 
+5. Point to the your database by changing the ArtistWebApiContext in Web.Config
+6. Endpoints:
+http://yourserver/api/artist/search/<search_criteria>/<page_number>/<page_size>
+http://yourserver/api/artist/<artist_id>/releases
+http://yourserver/api/artist/<artist_id>/albums
+
+#Technologies:
+Database : SQL Server Express 2014
+API: WebApi
+Orm: EntityFramework
+
+#Additional packages/references:
+AttributeRouting 3.5.6 (from NuGet)
+MusicBrainz package 1.3.0 (from NuGet)
+
+
+#Uncompleted tasks:
+1. Unit tests
