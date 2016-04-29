@@ -27,6 +27,13 @@ namespace ArtistApi.Controllers
         }
 
         [HttpGet]
+        public Artist GetArtist(Guid id)
+        {
+            return context.Artists
+                          .FirstOrDefault(a => a.Id == id);
+        }
+
+        [HttpGet]
         [Route("api/artist/search/{searchCriteria}")]
         public HttpResponseMessage Search(string searchCriteria)
         {
@@ -38,33 +45,29 @@ namespace ArtistApi.Controllers
         public HttpResponseMessage Search(string searchCriteria, int pageNumber, int pageSize)
         {
             searchCriteria = searchCriteria.ToLower();
-
-            int offset = pageSize * (pageNumber - 1);
-
-            IQueryable<Artist> artists = context.Artists
-                                                .Where(a => a.Name.ToLower().StartsWith(searchCriteria) ||
-                                                            a.Aliases.ToLower().Contains(searchCriteria))
-                                                .OrderBy(a => a.Name)
-                                                .Skip(offset)
-                                                .Take(pageSize);
+            
+            var artists = context.Artists
+                                 .Where(a => a.Name.ToLower().StartsWith(searchCriteria) ||
+                                             a.Aliases.ToLower().Contains(searchCriteria))
+                                 .OrderBy(a => a.Name);
 
             if (artists.Count() == 0)
             {
                 return Request.CreateResponse(HttpStatusCode.NoContent);
             }
 
-            var result = new SearchResult
-            {
-                Results = artists.ToList()
-                                 .Select(a => new SearchResultArtist
-                {
-                    Name = a.Name,
-                    Country = a.Country,
-                    Aliases = a.Aliases.Split(',')
-                })
-            };
+            var result = new SearchResult(artists, pageNumber, pageSize);
 
             return Request.CreateResponse(HttpStatusCode.OK, result);
+        }
+
+        [HttpGet]
+        [Route("api/artist/{artistId}/releases")]
+        public HttpResponseMessage Releases(Guid artistId)
+        {
+            var result = MusicBrainz.Search.Release(arid: artistId.ToString());
+
+            return Request.CreateResponse();
         }
     }
 }
