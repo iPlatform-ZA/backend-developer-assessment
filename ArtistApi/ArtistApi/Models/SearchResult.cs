@@ -47,5 +47,10 @@ namespace ArtistApi.Models
         {
             get { return PageSize * (PageNumber - 1); }
         }
+
+        public bool HasResults()
+        {
+            return artists.Any();
+        }
     }
 }

@@ -45,18 +45,18 @@ namespace ArtistApi.Controllers
         public HttpResponseMessage Search(string searchCriteria, int pageNumber, int pageSize)
         {
             searchCriteria = searchCriteria.ToLower();
-            
+
             var artists = context.Artists
                                  .Where(a => a.Name.ToLower().StartsWith(searchCriteria) ||
                                              a.Aliases.ToLower().Contains(searchCriteria))
                                  .OrderBy(a => a.Name);
 
-            if (artists.Count() == 0)
+            var result = new SearchResult(artists, pageNumber, pageSize);
+
+            if (!result.HasResults())
             {
                 return Request.CreateResponse(HttpStatusCode.NoContent);
             }
-
-            var result = new SearchResult(artists, pageNumber, pageSize);
 
             return Request.CreateResponse(HttpStatusCode.OK, result);
         }
@@ -65,9 +65,21 @@ namespace ArtistApi.Controllers
         [Route("api/artist/{artistId}/releases")]
         public HttpResponseMessage Releases(Guid artistId)
         {
-            var result = MusicBrainz.Search.Release(arid: artistId.ToString());
+            var artist = GetArtist(artistId);
 
-            return Request.CreateResponse();
+            if (artistId == null)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest);
+            }
+
+            var releases = MusicBrainz.Search.Release(arid: artist.Id.ToString());
+
+            if (releases.Count == 0)
+            {
+                return Request.CreateResponse(HttpStatusCode.NoContent);
+            }
+
+            return Request.CreateResponse(releases);
         }
     }
 }
