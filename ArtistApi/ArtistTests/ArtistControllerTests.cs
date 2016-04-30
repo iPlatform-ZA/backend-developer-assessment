@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -9,6 +10,7 @@ using NUnit.Framework;
 using Moq;
 
 using ArtistApi.Controllers;
+using ArtistApi.Models;
 using ArtistDAL.Models;
 using ArtistService.Services;
 
@@ -17,21 +19,27 @@ namespace ArtistTests
     [TestFixture]
     public class ArtistControllerTests
     {
+        private ArtistController controller;
+        private Mock<IArtistService> service;
+
+        public ArtistControllerTests()
+        {
+            service = new Mock<IArtistService>();
+
+            controller = new ArtistController(service.Object);
+            controller.Request = new HttpRequestMessage();
+            controller.Configuration = new HttpConfiguration();
+        }
+
         [Test]
         public void GetArtists_ShouldReturnAllArtists()
         {
             // arrange
-            var expected = new Artist[] { new Artist { Id = Guid.NewGuid() };
-
-            var service = new Mock<IArtistService>();
+            var expected = new Artist[] { new Artist { Id = Guid.NewGuid() } };
 
             service.Setup(s => s.GetAll())
                    .Returns(expected);
-
-            var controller = new ArtistController(service.Object);
-            controller.Request = new HttpRequestMessage();
-            controller.Configuration = new HttpConfiguration();
-
+            
             // act
             var response = controller.GetArtists();
 
@@ -51,14 +59,8 @@ namespace ArtistTests
             // arrange
             var id = Guid.NewGuid();
 
-            var service = new Mock<IArtistService>();
-
             service.Setup(s => s.Get(id))
                    .Returns(new Artist { Id = id });
-
-            var controller = new ArtistController(service.Object);
-            controller.Request = new HttpRequestMessage();
-            controller.Configuration = new HttpConfiguration();
 
             // act
             var response = controller.GetArtist(id);
@@ -77,14 +79,8 @@ namespace ArtistTests
         public void GetArtist_WithInvalidId_ShouldReturnNull()
         {
             // arrange
-            var service = new Mock<IArtistService>();
-
             service.Setup(s => s.Get(Guid.NewGuid()))
                    .Returns((Guid id) => new Artist { Id = id });
-
-            var controller = new ArtistController(service.Object);
-            controller.Request = new HttpRequestMessage();
-            controller.Configuration = new HttpConfiguration();
 
             // act
             var response = controller.GetArtist(Guid.NewGuid());
@@ -96,6 +92,42 @@ namespace ArtistTests
             Assert.That(response.StatusCode == HttpStatusCode.OK);
 
             Assert.That(actual, Is.Null);
+        }
+
+        [Test]
+        public void SearchArtist_WithInvalidSearch_ShouldReturnNoContent()
+        {
+            // act
+            var response = controller.Search("Invalid Search");
+
+            // assert
+            service.Verify(s => s.SearchArtists(It.IsAny<string>()));
+
+            Assert.That(response.StatusCode == HttpStatusCode.NoContent);
+        }
+
+        [Test]
+        public void SearchArtist_WithValidSearch_ShouldReturnSearchResults()
+        {
+            // arrange
+            service.Setup(s => s.SearchArtists(It.IsAny<string>()))
+                   .Returns((new Artist[] { new Artist { Name = "Search" } }).AsQueryable());
+
+            // act
+            var response = controller.Search("Search", 1, 5);
+
+            SearchResult result;
+            response.TryGetContentValue(out result);
+
+            // assert
+            service.Verify(s => s.SearchArtists(It.IsAny<string>()));
+
+            Assert.That(response.StatusCode == HttpStatusCode.OK);
+
+            Assert.That(result, Is.Not.Null);
+            Assert.That(result.PageNumber == 1);
+            Assert.That(result.PageSize == 5);
+            CollectionAssert.IsNotEmpty(result.Results);
         }
     }
 }

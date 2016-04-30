@@ -25,9 +25,18 @@ namespace ArtistService.Services
 
         public Artist Get(Guid id)
         {
-            throw new NotImplementedException();
-            /*context.Artists
-                          .FirstOrDefault(a => a.Id == id)*/
+            return context.Artists
+                          .FirstOrDefault(a => a.Id == id);
+        }
+
+        public IQueryable<Artist> SearchArtists(string searchName)
+        {
+            searchName = searchName.ToLower();
+
+            return context.Artists
+                          .Where(a => a.Name.ToLower().StartsWith(searchName) ||
+                                      a.Aliases.ToLower().Contains(searchName))
+                          .OrderBy(a => a.Name);
         }
 
         public void Dispose()

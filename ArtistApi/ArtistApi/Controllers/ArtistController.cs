@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
 using ArtistApi.Models;
-
-using ArtistDAL;
-using ArtistDAL.Models;
 
 using ArtistService.Services;
 
@@ -19,13 +14,8 @@ namespace ArtistApi.Controllers
     {
         public const int DefaultPageSize = 10;
 
-        private ArtistContext context = new ArtistContext();
         private IArtistService service;
-
-        public ArtistController() :
-            this(new ArtistService.Services.ArtistService(new ArtistContext()))
-        { }
-
+        
         public ArtistController(IArtistService service)
         {
             this.service = service;
@@ -55,16 +45,10 @@ namespace ArtistApi.Controllers
         }
 
         [HttpGet]
-        [Route("api/artist/search/{searchCriteria}/{pageNumber:int}/{pageSize:int}")]
-        public HttpResponseMessage Search(string searchCriteria, int pageNumber, int pageSize)
+        [Route("api/artist/search/{searchName}/{pageNumber:int}/{pageSize:int}")]
+        public HttpResponseMessage Search(string searchName, int pageNumber, int pageSize)
         {
-            searchCriteria = searchCriteria.ToLower();
-
-            var artists = context.Artists
-                                 .Where(a => a.Name.ToLower().StartsWith(searchCriteria) ||
-                                             a.Aliases.ToLower().Contains(searchCriteria))
-                                 .OrderBy(a => a.Name);
-
+            var artists = service.SearchArtists(searchName);
             var result = new SearchResult(artists, pageNumber, pageSize);
 
             if (!result.HasResults())
