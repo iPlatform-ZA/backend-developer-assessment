@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtistDAL", "ArtistDAL\Arti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtistTests", "ArtistTests\ArtistTests.csproj", "{B554FB2D-5DB6-4244-BE6F-101344973AEB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtistService", "ArtistService\ArtistService.csproj", "{E27AB60F-68E3-4111-9579-3951A2C1D5CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B554FB2D-5DB6-4244-BE6F-101344973AEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B554FB2D-5DB6-4244-BE6F-101344973AEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B554FB2D-5DB6-4244-BE6F-101344973AEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E27AB60F-68E3-4111-9579-3951A2C1D5CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E27AB60F-68E3-4111-9579-3951A2C1D5CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E27AB60F-68E3-4111-9579-3951A2C1D5CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E27AB60F-68E3-4111-9579-3951A2C1D5CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

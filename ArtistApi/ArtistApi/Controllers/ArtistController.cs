@@ -10,6 +10,8 @@ using ArtistApi.Models;
 using ArtistDAL;
 using ArtistDAL.Models;
 
+using ArtistService.Services;
+
 namespace ArtistApi.Controllers
 {
     public class ArtistController :
@@ -18,19 +20,31 @@ namespace ArtistApi.Controllers
         public const int DefaultPageSize = 10;
 
         private ArtistContext context = new ArtistContext();
+        private IArtistService service;
+
+        public ArtistController() :
+            this(new ArtistService.Services.ArtistService(new ArtistContext()))
+        { }
+
+        public ArtistController(IArtistService service)
+        {
+            this.service = service;
+        }
         
         [HttpGet]
-        public IEnumerable<Artist> GetArtists()
+        public HttpResponseMessage GetArtists()
         {
-            return context.Artists
-                          .ToList();
+            var artists = service.GetAll();
+
+            return Request.CreateResponse(HttpStatusCode.OK, artists);
         }
 
         [HttpGet]
-        public Artist GetArtist(Guid id)
+        public HttpResponseMessage GetArtist(Guid id)
         {
-            return context.Artists
-                          .FirstOrDefault(a => a.Id == id);
+            var artist = service.Get(id);
+
+            return Request.CreateResponse(HttpStatusCode.OK, artist);
         }
 
         [HttpGet]
@@ -65,7 +79,7 @@ namespace ArtistApi.Controllers
         [Route("api/artist/{artistId}/releases")]
         public HttpResponseMessage Releases(Guid artistId)
         {
-            var artist = GetArtist(artistId);
+            var artist = service.Get(artistId);
 
             if (artistId == null)
             {
@@ -80,6 +94,16 @@ namespace ArtistApi.Controllers
             }
 
             return Request.CreateResponse(releases);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+
+            if (disposing)
+            {
+
+            }
         }
     }
 }

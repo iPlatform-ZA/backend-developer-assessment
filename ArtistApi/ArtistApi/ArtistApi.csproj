@@ -124,6 +124,10 @@
       <Project>{e2aacad8-2ba2-478d-aac4-9501014ec83b}</Project>
       <Name>ArtistDAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ArtistService\ArtistService.csproj">
+      <Project>{E27AB60F-68E3-4111-9579-3951A2C1D5CA}</Project>
+      <Name>ArtistService</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
