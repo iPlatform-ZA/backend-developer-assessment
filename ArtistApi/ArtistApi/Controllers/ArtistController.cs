@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -77,7 +78,29 @@ namespace ArtistApi.Controllers
                 return Request.CreateResponse(HttpStatusCode.NoContent);
             }
 
-            return Request.CreateResponse(releases);
+            return Request.CreateResponse(HttpStatusCode.OK, releases.Data);
+        }
+
+        [HttpGet]
+        [Route("api/artist/{artistId}/albums")]
+        public HttpResponseMessage Albums(Guid artistId)
+         {
+            var artist = service.Get(artistId);
+
+            if (artistId == null)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest);
+            }
+
+            var release = MusicBrainz.Search.Release(arid: artist.Id.ToString(), limit: 10);
+            var releases = new List<Release>();
+
+            foreach (var releaseData in release.Data)
+            {
+                releases.Add(Release.CreateFromReleaseData(artist.Id, releaseData));
+            }
+
+            return Request.CreateResponse(HttpStatusCode.OK, releases);
         }
 
         protected override void Dispose(bool disposing)

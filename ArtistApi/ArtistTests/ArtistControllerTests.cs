@@ -95,7 +95,7 @@ namespace ArtistTests
         }
 
         [Test]
-        public void SearchArtist_WithInvalidSearch_ShouldReturnNoContent()
+        public void SearchArtist_WithInvalidSearch_ShouldReturnNoContext()
         {
             // act
             var response = controller.Search("Invalid Search");
