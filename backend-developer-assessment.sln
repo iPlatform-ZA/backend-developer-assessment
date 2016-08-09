@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{5D4D8185-D79C-406B-BCF8-7D01BB3F3775}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.Tests", "WebApi.Tests\WebApi.Tests.csproj", "{555B2EFD-304A-4F1B-BC6A-1BF199B7305D}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ArtistInfo", "ArtistInfo\ArtistInfo.sqlproj", "{29050AE0-6F08-4EE7-8AED-205347EA1DA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicBrainzAPI", "MusicBrainsAPI\MusicBrainzAPI.csproj", "{C435C86B-8C3C-48E2-A047-A98E1465DDEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtistInfoDataAccess", "ArtistInfoDataAccess\ArtistInfoDataAccess.csproj", "{0FE9D8F2-D123-46FC-9551-C767F6CF3D00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicBrainzAPI.Tests", "MusicBrainzAPI.Tests\MusicBrainzAPI.Tests.csproj", "{B1B4C86A-1C3C-4B3C-8037-7E554E329E2E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E8F4DC73-462D-4DE6-9C71-8E5AECB1A62B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{7219C5C2-4035-4A75-AC37-D7E52C6966F5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D4D8185-D79C-406B-BCF8-7D01BB3F3775}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D4D8185-D79C-406B-BCF8-7D01BB3F3775}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D4D8185-D79C-406B-BCF8-7D01BB3F3775}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D4D8185-D79C-406B-BCF8-7D01BB3F3775}.Release|Any CPU.Build.0 = Release|Any CPU
+		{555B2EFD-304A-4F1B-BC6A-1BF199B7305D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{555B2EFD-304A-4F1B-BC6A-1BF199B7305D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{555B2EFD-304A-4F1B-BC6A-1BF199B7305D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{555B2EFD-304A-4F1B-BC6A-1BF199B7305D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29050AE0-6F08-4EE7-8AED-205347EA1DA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29050AE0-6F08-4EE7-8AED-205347EA1DA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29050AE0-6F08-4EE7-8AED-205347EA1DA0}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{29050AE0-6F08-4EE7-8AED-205347EA1DA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29050AE0-6F08-4EE7-8AED-205347EA1DA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29050AE0-6F08-4EE7-8AED-205347EA1DA0}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C435C86B-8C3C-48E2-A047-A98E1465DDEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C435C86B-8C3C-48E2-A047-A98E1465DDEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C435C86B-8C3C-48E2-A047-A98E1465DDEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C435C86B-8C3C-48E2-A047-A98E1465DDEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FE9D8F2-D123-46FC-9551-C767F6CF3D00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FE9D8F2-D123-46FC-9551-C767F6CF3D00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FE9D8F2-D123-46FC-9551-C767F6CF3D00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FE9D8F2-D123-46FC-9551-C767F6CF3D00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1B4C86A-1C3C-4B3C-8037-7E554E329E2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1B4C86A-1C3C-4B3C-8037-7E554E329E2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1B4C86A-1C3C-4B3C-8037-7E554E329E2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1B4C86A-1C3C-4B3C-8037-7E554E329E2E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{555B2EFD-304A-4F1B-BC6A-1BF199B7305D} = {E8F4DC73-462D-4DE6-9C71-8E5AECB1A62B}
+		{29050AE0-6F08-4EE7-8AED-205347EA1DA0} = {7219C5C2-4035-4A75-AC37-D7E52C6966F5}
+		{0FE9D8F2-D123-46FC-9551-C767F6CF3D00} = {7219C5C2-4035-4A75-AC37-D7E52C6966F5}
+		{B1B4C86A-1C3C-4B3C-8037-7E554E329E2E} = {E8F4DC73-462D-4DE6-9C71-8E5AECB1A62B}
+	EndGlobalSection
+EndGlobal
