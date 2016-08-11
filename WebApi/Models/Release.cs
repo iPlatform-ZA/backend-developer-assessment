@@ -9,6 +9,6 @@ namespace WebApi.Models
         public string Status { get; set; }
         public string Label { get; set; }
         public int NumberOfTracks { get; set; }
-        //public Artist OtherArtists { get; set; }
+        public ContributingArtist[] OtherArtists { get; set; }
     }
 }

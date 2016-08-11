@@ -5,6 +5,6 @@ namespace MusicBrainsAPI.ServiceModels
     public class NameCredit
     {
         [XmlElement("artist")]
-        public Artist Artists { get; set; }
+        public Artist Artist { get; set; }
     }
 }

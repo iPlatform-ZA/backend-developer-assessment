@@ -71,5 +71,23 @@ namespace WebApi.Controllers
 
             return result;
         }
+
+        [HttpGet]
+        [Route("{artistId}/albums")]
+        public ReleasesResult GetAlbumsByArtistId(Guid artistId)
+        {
+            ReleasesResult result = new ReleasesResult();
+
+            CompositeArtist artist = _artistFactory.GetById(artistId);
+
+            if (artist != null)
+            {
+                var releases = _releaseRepository.GetAlbumsByArtistId(artistId).ToArray();
+
+                result.Releases = releases.Take(10).ToArray();
+            }
+
+            return result;
+        }
     }
 }

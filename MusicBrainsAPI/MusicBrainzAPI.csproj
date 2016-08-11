@@ -42,6 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SearchableEntiesEnum.cs" />
+    <Compile Include="MusicBrainz.cs" />
+    <Compile Include="HttpCallProcessor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceModels\AliasList.cs" />
     <Compile Include="ServiceModels\Artist.cs" />
     <Compile Include="ServiceModels\ArtistCredit.cs" />
@@ -49,17 +52,14 @@
     <Compile Include="ServiceModels\LabelInfo.cs" />
     <Compile Include="ServiceModels\LabelnfoList.cs" />
     <Compile Include="ServiceModels\MediumList.cs" />
+    <Compile Include="ServiceModels\NameCredit.cs" />
+    <Compile Include="ServiceModels\Release.cs" />
     <Compile Include="ServiceModels\ReleaseGroup.cs" />
     <Compile Include="ServiceModels\ReleaseGroupList.cs" />
+    <Compile Include="ServiceModels\ReleaseList.cs" />
     <Compile Include="ServiceModels\SearchReleaseGroupResponse.cs" />
     <Compile Include="ServiceModels\SearchReleaseResponse.cs" />
-    <Compile Include="ServiceModels\NameCredit.cs" />
-    <Compile Include="ServiceModels\ReleaseList.cs" />
-    <Compile Include="MusicBrainz.cs" />
-    <Compile Include="ServiceModels\Release.cs" />
     <Compile Include="ServiceModels\SearchResponse.cs" />
-    <Compile Include="HttpCallProcessor.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XmlDeserializer.cs" />
   </ItemGroup>
   <ItemGroup>

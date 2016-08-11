@@ -8,7 +8,7 @@ namespace MusicBrainsAPI.ServiceModels
         [XmlAttribute("id")]
         public Guid ID { get; set; }
 
-        [XmlElement("Name")]
+        [XmlElement("name")]
         public string Name { get; set; }
 
         [XmlElement("alias-list")]

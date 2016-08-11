@@ -16,5 +16,8 @@ namespace MusicBrainsAPI.ServiceModels
 
         [XmlElement("artist-credit")]
         public ArtistCredit ArtistCredit { get; set; }
+
+        [XmlElement("release-list")]
+        public ReleaseList ReleaseList { get; set; }
     }
 }
