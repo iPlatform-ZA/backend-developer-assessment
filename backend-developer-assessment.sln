@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.Tests", "WebApi.Test
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ArtistInfo", "ArtistInfo\ArtistInfo.sqlproj", "{29050AE0-6F08-4EE7-8AED-205347EA1DA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicBrainzAPI", "MusicBrainsAPI\MusicBrainzAPI.csproj", "{C435C86B-8C3C-48E2-A047-A98E1465DDEB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicBrainzAPI", "MusicBrainzAPI\MusicBrainzAPI.csproj", "{C435C86B-8C3C-48E2-A047-A98E1465DDEB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtistInfoDataAccess", "ArtistInfoDataAccess\ArtistInfoDataAccess.csproj", "{0FE9D8F2-D123-46FC-9551-C767F6CF3D00}"
 EndProject

@@ -65,7 +65,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MusicBrainsAPI\MusicBrainzAPI.csproj">
+    <ProjectReference Include="..\MusicBrainzAPI\MusicBrainzAPI.csproj">
       <Project>{C435C86B-8C3C-48E2-A047-A98E1465DDEB}</Project>
       <Name>MusicBrainzAPI</Name>
     </ProjectReference>
