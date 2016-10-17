@@ -1,9 +1,6 @@
 ﻿using BackendApi.Models;
 using BackendApi.Services;
-<<<<<<< HEAD
 using Newtonsoft.Json;
-=======
->>>>>>> refs/remotes/origin/master
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -11,10 +8,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Net;
 using System.Net.Http;
-<<<<<<< HEAD
 using System.Threading.Tasks;
-=======
->>>>>>> refs/remotes/origin/master
 using System.Web.Http;
 
 namespace BackendApi.Controllers
@@ -38,11 +32,7 @@ namespace BackendApi.Controllers
                         || x.Country.ToLower().Contains(keyword.ToLower())
                         || x.Aliases.ToLower().Contains(keyword.ToLower()))
                         .OrderBy(x => x.Name).AsQueryable();
-<<<<<<< HEAD
             var resultsCount = artistsQuery.ToList().Count;
-=======
-             var resultsCount = artistsQuery.ToList().Count;
->>>>>>> refs/remotes/origin/master
             var pages = ((resultsCount / pageSize) < 1 ? 1 : ((resultsCount / pageSize) + ((resultsCount % pageSize) == 0 ? 0 : 1)));
             var dataResults = artistsQuery.OrderBy(x => x.Name)
                   .Skip((page - 1) * pageSize).Take(pageSize)
@@ -52,29 +42,20 @@ namespace BackendApi.Controllers
                       Country = a.Country,
                       Id = a.Id,
                       Name = a.Name,
-<<<<<<< HEAD
                       Alias = a.Aliases.Split(',').ToArray(),
                       Albums= Url.Link("albums",new { id= a.Id })
-=======
-                      Alias = a.Aliases.Split(',').ToArray()
->>>>>>> refs/remotes/origin/master
                   }).ToArray();
             var result = new ArtistResultModel
             {
                 Artist = dataResults,
                 CurrentPage = page,
                 PageSize = pageSize,
-<<<<<<< HEAD
                 Pages = pages,
-=======
-                Pages =pages,
->>>>>>> refs/remotes/origin/master
                 ResultsCount = resultsCount
 
             };
             return Ok(result);
         }
-<<<<<<< HEAD
         [HttpGet]
         [Route("{id}/releases")]
         public async Task<IHttpActionResult> Releases(Guid id)
@@ -115,10 +96,6 @@ namespace BackendApi.Controllers
                 return Ok(new List<Release>());
             }
         }
-=======
-
-
->>>>>>> refs/remotes/origin/master
 
     }
 }

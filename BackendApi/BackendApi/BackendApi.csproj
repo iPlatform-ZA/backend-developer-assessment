@@ -213,11 +213,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="Models\ArtistReleaseModel.cs" />
     <Compile Include="Models\ReleaseModels.cs" />
-=======
->>>>>>> refs/remotes/origin/master
     <Compile Include="Models\ArtistContext.cs" />
     <Compile Include="Models\ArtistInializer.cs" />
     <Compile Include="Models\Artist.cs" />
