@@ -29,8 +29,11 @@ namespace BackendApi.Models
         [JsonProperty("id")]
         [Key]
         public Guid Id { get; set; }
+<<<<<<< HEAD
         [NotMapped]
         [JsonProperty("albums")]
         public string Albums { get; internal set; }
+=======
+>>>>>>> refs/remotes/origin/master
     }
 }

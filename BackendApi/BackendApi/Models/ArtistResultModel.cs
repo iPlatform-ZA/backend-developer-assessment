@@ -18,7 +18,11 @@ namespace BackendApi.Models
         public int PageSize { get; set; }
         [JsonProperty("numberOfPages")]
         public int Pages { get; set; }
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> refs/remotes/origin/master
 
     }
 }
