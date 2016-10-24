@@ -35,8 +35,8 @@ namespace Structure.Adapters.MusicBrainz
             var appId = ConfigurationManager.AppSettings["ApplicationId"];
             var offset = paging.Page_Number;
             var limit = paging.Page_Size;
-            var query = $"?query=arid:{artistId}&offset={offset}&limit={limit}&fmt=json";
-            var url = $"{baseUrl}{version}/release/{query}";
+            var query = string.Format("?query=arid:{0}&offset={1}&limit={2}&fmt=json",artistId,offset,limit);
+            var url = string.Format("{0}{1}/release/{2}", baseUrl, version, query);
 
             var request = (HttpWebRequest)WebRequest.Create(url);
             request.Method = "GET";
