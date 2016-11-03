@@ -25,11 +25,7 @@ namespace BackendDeveloperAssessment.web.Controllers
 
         public ArtistController()
         {
-            WebServiceUtility<releaseData> a = new WebServiceUtility<releaseData>();
-            var asss = a.JsonSer(a.Get("http://musicbrainz.org/ws/2/release/?query=arid:65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab&fmt=json"));
-
-
-             dbContext = new BackendDeveloperAssessmentDbContext();
+            dbContext = new BackendDeveloperAssessmentDbContext();
 
             artistRepository = new ArtistRepository(dbContext);
             aliasRepository = new AliasRepository(dbContext);
@@ -42,7 +38,7 @@ namespace BackendDeveloperAssessment.web.Controllers
         // GET: Artist
         public JsonResult Search(string search_criteria, int page_number = 1, int page_size = 10)
         {
-            var resultsCount = artistManager.GetAllCount();
+            var resultsCount = artistManager.GetAllCount(search_criteria);
             var filteredResults = artistManager.Search(search_criteria, page_number, page_size);
 
             var artistVM = new ArtistViewModel
@@ -51,10 +47,18 @@ namespace BackendDeveloperAssessment.web.Controllers
                 NumberOfSearchResults = resultsCount,
                 page = string.Format("{0}", page_number),
                 pageSize = string.Format("{0}", page_size),
-                NumberOfPages = string.Format("{0}", ((resultsCount / page_size) + 1))
+                NumberOfPages = string.Format("{0}", resultsCount <= page_size ? 1 : ((resultsCount / page_size) + 1))
             };
 
             return Json(artistVM, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult Releases(string artist_id)
+        {
+            WebServiceUtility<releaseData> a = new WebServiceUtility<releaseData>();
+            var asss = a.JsonSer(a.Get("http://musicbrainz.org/ws/2/release/?query=arid:" + artist_id + "&fmt=json"));
+
+            return Json(asss, JsonRequestBehavior.AllowGet);
         }
     }
 }

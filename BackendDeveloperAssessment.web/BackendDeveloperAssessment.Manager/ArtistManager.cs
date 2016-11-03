@@ -26,7 +26,7 @@ namespace BackendDeveloperAssessment.Manager
         private List<ArtistDisplayViewModel> GetAll(string searchCriteria = "")
         {
             List<ArtistDisplayViewModel> artistDisplayViewModelList = new List<ArtistDisplayViewModel>();
-            var artists = artistRepository.GetAll();
+            var artists = artistRepository.GetAll().ToList();
 
             foreach (var artist in artists)
             {
@@ -44,9 +44,9 @@ namespace BackendDeveloperAssessment.Manager
             return artistDisplayViewModelList;
         }
 
-        public int GetAllCount()
+        public int GetAllCount(string searchCriteria)
         {
-            return GetAll().Count;
+            return GetAll(searchCriteria).Count;
         }
 
         public List<ArtistDisplayViewModel> Search(string searchCriteria, int pageNumber, int pageSize)
