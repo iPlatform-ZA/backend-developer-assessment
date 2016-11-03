@@ -9,6 +9,6 @@ namespace BackendDeveloperAssessment.IRepository
 {
     public interface IAliasRepository : IRepository<Aliases>
     {
-        List<Aliases> GetByArtistId(int artistId);
+        IQueryable<Aliases> GetByArtistId(int artistId);
     }
 }

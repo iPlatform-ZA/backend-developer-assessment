@@ -12,9 +12,9 @@ namespace BackendDeveloperAssessment.Repository
     {
         public AliasRepository(BackendDeveloperAssessmentDbContext dbContext) : base(dbContext) { }
 
-        public List<Aliases> GetByArtistId(int artistId)
+        public IQueryable<Aliases> GetByArtistId(int artistId)
         {
-            return this.DbContext.Set<Aliases>().Where(x => x.ArtistId == artistId).ToList();
+            return this.DbContext.Set<Aliases>().Where(x => x.ArtistId == artistId);
         }
     }
 }

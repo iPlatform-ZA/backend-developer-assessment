@@ -1,4 +1,5 @@
 ﻿using BackendDeveloperAssessment.IRepository;
+using BackendDeveloperAssessment.IRepository.IUtilities;
 using BackendDeveloperAssessment.Model;
 using System;
 using System.Collections.Generic;
@@ -13,17 +14,19 @@ namespace BackendDeveloperAssessment.Manager
 
         IArtistRepository artistRepository;
         IAliasRepository aliasRepository;
+        IPagerUtility<ArtistDisplayViewModel> pagerUtility;
 
-        public ArtistManager(IArtistRepository artistRepository, IAliasRepository aliasRepository)
+        public ArtistManager(IArtistRepository artistRepository, IAliasRepository aliasRepository, IPagerUtility<ArtistDisplayViewModel> pagerUtility)
         {
             this.artistRepository = artistRepository;
             this.aliasRepository = aliasRepository;
+            this.pagerUtility = pagerUtility;
         }
 
-        public List<ArtistDisplayViewModel> GetAll()
+        private List<ArtistDisplayViewModel> GetAll(string searchCriteria = "")
         {
             List<ArtistDisplayViewModel> artistDisplayViewModelList = new List<ArtistDisplayViewModel>();
-            var artists = artistRepository.GetAll().ToList();
+            var artists = artistRepository.GetAll();
 
             foreach (var artist in artists)
             {
@@ -31,16 +34,24 @@ namespace BackendDeveloperAssessment.Manager
 
                 artistDisplayViewModel.Name = artist.ArtistName;
                 artistDisplayViewModel.Country = artist.Country;
-                artistDisplayViewModel.Alias = ConvertAliasToStringList(aliasRepository.GetByArtistId(artist.ArtistId));
+                artistDisplayViewModel.Alias = ConvertAliasToStringList(aliasRepository.GetByArtistId(artist.ArtistId).ToList());
 
-                artistDisplayViewModelList.Add(artistDisplayViewModel);
+                if (artistDisplayViewModel.Name.ToLower().Contains(searchCriteria) || SearchStrArray(artistDisplayViewModel.Alias, searchCriteria))
+                {
+                    artistDisplayViewModelList.Add(artistDisplayViewModel);
+                }
             }
             return artistDisplayViewModelList;
         }
 
-        public List<ArtistDisplayViewModel> Search(List<ArtistDisplayViewModel> results, string searchCriteria, int pageNumber, int pageSize)
+        public int GetAllCount()
         {
-            return null;// artistRepository.GetAll().Where(x => x.ArtistName.ToLower().Contains(searchQuery.ToLower())).ToList();
+            return GetAll().Count;
+        }
+
+        public List<ArtistDisplayViewModel> Search(string searchCriteria, int pageNumber, int pageSize)
+        {
+            return pagerUtility.GetPageItems(GetAll(searchCriteria), pageNumber, pageSize).ToList();
         }
 
         private List<string> ConvertAliasToStringList(List<Aliases> aliasList)
@@ -53,6 +64,18 @@ namespace BackendDeveloperAssessment.Manager
             }
 
             return strList;
+        }
+
+        private bool SearchStrArray(List<string> strArray, string searchCriteria)
+        {
+            foreach (string x in strArray)
+            {
+                if (x.ToLower().Contains(searchCriteria.ToLower()))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
