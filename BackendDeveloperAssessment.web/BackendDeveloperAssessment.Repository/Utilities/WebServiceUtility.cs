@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -30,10 +31,9 @@ namespace BackendDeveloperAssessment.Repository.Utilities
         {
             try
             {
-                JavaScriptSerializer serializer = new JavaScriptSerializer();
-                return serializer.Deserialize<T>(str);
+                return JsonConvert.DeserializeObject<T>(str);
             }
-            catch (Exception)
+            catch (Exception x)
             {
                 return default(T);
             }

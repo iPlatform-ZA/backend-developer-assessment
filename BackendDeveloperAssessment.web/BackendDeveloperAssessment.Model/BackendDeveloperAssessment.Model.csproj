@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Album\artistdetail.cs" />
+    <Compile Include="Album\label.cs" />
+    <Compile Include="Album\labelinfo.cs" />
+    <Compile Include="Album\otherArtists.cs" />
+    <Compile Include="Album\release.cs" />
+    <Compile Include="Album\releaseData.cs" />
     <Compile Include="Aliases.cs" />
     <Compile Include="Artist.cs" />
     <Compile Include="ArtistDisplayViewModel.cs" />

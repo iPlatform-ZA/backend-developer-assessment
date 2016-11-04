@@ -56,9 +56,17 @@ namespace BackendDeveloperAssessment.web.Controllers
         public JsonResult Releases(string artist_id)
         {
             WebServiceUtility<releaseData> a = new WebServiceUtility<releaseData>();
-            var asss = a.JsonSer(a.Get("http://musicbrainz.org/ws/2/release/?query=arid:" + artist_id + "&fmt=json"));
+            var releasesdata = a.JsonSer(a.Get("http://musicbrainz.org/ws/2/release/?query=arid:" + artist_id + "&fmt=json"));
 
-            return Json(asss, JsonRequestBehavior.AllowGet);
+            return Json(releasesdata.releases, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult Albums(string artist_id)
+        {
+            WebServiceUtility<releaseAlbumData> a = new WebServiceUtility<releaseAlbumData>();
+            var releasesdata = a.JsonSer(a.Get("http://musicbrainz.org/ws/2/release/?query=type:album%20AND%20arid:" + artist_id + "&fmt=json"));
+
+            return Json(releasesdata.releases.Take(10), JsonRequestBehavior.AllowGet);
         }
     }
 }

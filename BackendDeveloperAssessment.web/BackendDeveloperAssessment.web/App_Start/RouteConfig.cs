@@ -21,15 +21,21 @@ namespace BackendDeveloperAssessment.web
 
             routes.MapRoute(
                name: "ArtistSearch",
-               url: "{controller}/{action}/{search_criteria}/{page_number}/{page_size}",
+               url: "Artist/Search/{search_criteria}/{page_number}/{page_size}",
                defaults: new { controller = "Artist", action = "Search", search_criteria = UrlParameter.Optional, page_number = UrlParameter.Optional, page_size = UrlParameter.Optional }
-           );
+            );
 
             routes.MapRoute(
               name: "ArtistRelease",
-              url: "{controller}/{artist_id}/{action}",
+              url: "Artist/{artist_id}/Releases",
               defaults: new { controller = "Artist", action = "Releases", artist_id = UrlParameter.Optional }
-          );
+            );
+
+            routes.MapRoute(
+             name: "ArtistAlbum",
+             url: "Artist/{artist_id}/albums",
+             defaults: new { controller = "Artist", action = "Albums", artist_id = UrlParameter.Optional }
+            );
         }
     }
 }
