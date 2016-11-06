@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Assessment_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__RefactorLog">
+          <Key>
+            <PropertyRef Name="OperationKey" />
+          </Key>
+          <Property Name="OperationKey" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Assessment_DB.dbo.ArtistAliases' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ArtistAliases">
+          <Key>
+            <PropertyRef Name="ArtistIdentifier" />
+            <PropertyRef Name="Alias" />
+          </Key>
+          <Property Name="ArtistIdentifier" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Alias" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Artists">
+          <Key>
+            <PropertyRef Name="ArtistIdentifier" />
+          </Key>
+          <Property Name="ArtistIdentifier" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Country" Type="nvarchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ArtistAliases_Artist">
+          <End Role="Artists" Type="Self.Artists" Multiplicity="1" />
+          <End Role="ArtistAliases" Type="Self.ArtistAliases" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artists">
+              <PropertyRef Name="ArtistIdentifier" />
+            </Principal>
+            <Dependent Role="ArtistAliases">
+              <PropertyRef Name="ArtistIdentifier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Assessment_DBModelStoreContainer">
+          <EntitySet Name="__RefactorLog" EntityType="Self.__RefactorLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Artists" EntityType="Self.Artists" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ArtistAliases" EntityType="Self.ArtistAliases" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ArtistAliases].[ArtistIdentifier] AS [ArtistIdentifier], 
+    [ArtistAliases].[Alias] AS [Alias]
+    FROM [dbo].[ArtistAliases] AS [ArtistAliases]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_ArtistAliases_Artist" Association="Self.FK_ArtistAliases_Artist">
+            <End Role="Artists" EntitySet="Artists" />
+            <End Role="ArtistAliases" EntitySet="ArtistAliases" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Assessment_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__RefactorLog">
+          <Key>
+            <PropertyRef Name="OperationKey" />
+          </Key>
+          <Property Name="OperationKey" Type="Guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Artist">
+          <Key>
+            <PropertyRef Name="ArtistIdentifier" />
+          </Key>
+          <Property Name="ArtistIdentifier" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Country" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ArtistAliases" Relationship="Self.FK_ArtistAliases_Artist" FromRole="Artists" ToRole="ArtistAliases" />
+        </EntityType>
+        <EntityType Name="ArtistAlias">
+          <Key>
+            <PropertyRef Name="ArtistIdentifier" />
+            <PropertyRef Name="Alias" />
+          </Key>
+          <Property Name="ArtistIdentifier" Type="Guid" Nullable="false" />
+          <Property Name="Alias" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Artist" Relationship="Self.FK_ArtistAliases_Artist" FromRole="ArtistAliases" ToRole="Artists" />
+        </EntityType>
+        <Association Name="FK_ArtistAliases_Artist">
+          <End Role="Artists" Type="Self.Artist" Multiplicity="1" />
+          <End Role="ArtistAliases" Type="Self.ArtistAlias" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artists">
+              <PropertyRef Name="ArtistIdentifier" />
+            </Principal>
+            <Dependent Role="ArtistAliases">
+              <PropertyRef Name="ArtistIdentifier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Assessment_DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__RefactorLog" EntityType="Self.C__RefactorLog" />
+          <EntitySet Name="Artists" EntityType="Self.Artist" />
+          <EntitySet Name="ArtistAliases" EntityType="Self.ArtistAlias" />
+          <AssociationSet Name="FK_ArtistAliases_Artist" Association="Self.FK_ArtistAliases_Artist">
+            <End Role="Artists" EntitySet="Artists" />
+            <End Role="ArtistAliases" EntitySet="ArtistAliases" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Assessment_DBModelStoreContainer" CdmEntityContainer="Assessment_DBEntities">
+          <EntitySetMapping Name="C__RefactorLog">
+            <EntityTypeMapping TypeName="Assessment_DBModel.C__RefactorLog">
+              <MappingFragment StoreEntitySet="__RefactorLog">
+                <ScalarProperty Name="OperationKey" ColumnName="OperationKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Artists">
+            <EntityTypeMapping TypeName="Assessment_DBModel.Artist">
+              <MappingFragment StoreEntitySet="Artists">
+                <ScalarProperty Name="ArtistIdentifier" ColumnName="ArtistIdentifier" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ArtistAliases">
+            <EntityTypeMapping TypeName="Assessment_DBModel.ArtistAlias">
+              <MappingFragment StoreEntitySet="ArtistAliases">
+                <ScalarProperty Name="ArtistIdentifier" ColumnName="ArtistIdentifier" />
+                <ScalarProperty Name="Alias" ColumnName="Alias" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
