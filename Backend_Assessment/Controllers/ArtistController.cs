@@ -21,6 +21,13 @@ namespace Backend_Assessment.Controllers
             _musicBrainzService = new MusicBrainzService();
         }
 
+        /// <summary>
+        /// Performs a search for specified artist.
+        /// </summary>
+        /// <param name="criteria"></param>
+        /// <param name="pageNumber"></param>
+        /// <param name="pageSize"></param>
+        /// <returns>Paged list of Artists.</returns>
         [HttpGet]
         [Route(template: "api/artist/search/{criteria}")]
         [Route(template: "api/artist/search/{criteria}/{pageNumber}/{pageSize}")]
@@ -40,18 +47,16 @@ namespace Backend_Assessment.Controllers
             return pagedList;
         }
 
+        /// <summary>
+        /// Performs a search for releases for a specific artist.
+        /// </summary>
+        /// <param name="artistId"></param>
+        /// <returns>IQueryable list of Release.</returns>
         [HttpGet]
         [Route(template: "api/artist/{artistId}/releases")]
         public IQueryable<Models.Release> ReleaseSearch(string artistId)
         {
-            try
-            {
-                return _musicBrainzService.GetReleases(artistId).ProjectTo<Models.Release>();
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
+            return _musicBrainzService.GetReleases(artistId).ProjectTo<Models.Release>();
         }
     }
 }
