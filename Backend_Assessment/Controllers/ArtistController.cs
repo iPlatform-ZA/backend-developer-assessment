@@ -58,6 +58,20 @@ namespace Backend_Assessment.Controllers
         {
             return _musicBrainzService.GetReleases(artistId).ProjectTo<Models.Release>();
         }
+
+
+        /// <summary>
+        /// Performs a search for album only releases for a specific artist.
+        /// Returns only the first 10 albums.
+        /// </summary>
+        /// <param name="artistId"></param>
+        /// <returns>IQueryable list of Release.</returns>
+        [HttpGet]
+        [Route(template: "api/artist/{artistId}/albums")]
+        public IQueryable<Models.Release> AlbumSearch(string artistId)
+        {
+            return _musicBrainzService.GetReleases(artistId, 10, true).ProjectTo<Models.Release>();
+        }
     }
 }
 

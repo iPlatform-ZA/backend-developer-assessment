@@ -18,9 +18,9 @@ namespace Backend_Assessment.Services
         }
 
 
-        public IQueryable<EntityModels.Release> GetReleases(string artistId)
+        public IQueryable<EntityModels.Release> GetReleases(string artistId, int limit = 100, bool albumOnly = false)
         {
-            var result = _client.Execute<List<EntityModels.Release>>(new RestRequest($"release/?query=arid:{artistId}&limit=100", Method.GET) { RequestFormat = DataFormat.Xml });
+            var result = _client.Execute<List<EntityModels.Release>>(new RestRequest($"release/?query=arid:{artistId}&limit={limit}{(albumOnly ? "&type=album" : "")}", Method.GET) { RequestFormat = DataFormat.Xml });
 
             if(result.StatusCode == System.Net.HttpStatusCode.OK)
             {
