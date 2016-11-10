@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="7a7cc732-810b-434c-84e8-907221d08b92" ChangeDateTime="11/02/2016 17:55:14">
+    <Property Name="ElementName" Value="[dbo].[Artists].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Artists]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Identifier" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="102d48d9-d566-4939-b11e-4c27d266358f" ChangeDateTime="11/02/2016 17:57:26">
+    <Property Name="ElementName" Value="[dbo].[ArtistAliases].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ArtistAliases]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="identifier" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="bd4ed804-d79a-49f0-af34-a0532a20f41f" ChangeDateTime="11/02/2016 17:58:06">
+    <Property Name="ElementName" Value="[dbo].[ArtistAliases].[identifier]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ArtistAliases]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ArtistIdentifier" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2bd870b8-d39d-45a9-944b-8876dd6d6eb1" ChangeDateTime="11/02/2016 17:59:02">
+    <Property Name="ElementName" Value="[dbo].[Artists].[Identifier]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Artists]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ArtistIdentifier" />
+  </Operation>
+</Operations>
