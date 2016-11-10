@@ -24,11 +24,7 @@ namespace Backend_Assessment.Services
 
             if(result.StatusCode == System.Net.HttpStatusCode.OK)
             {
-                return result.Data.Select(x =>
-                {
-                    x.NameCredit = x.NameCredit.Where(nc => nc.Id != artistId).ToList();
-                    return x;
-                }).AsQueryable();
+                return result.Data.AsQueryable();
             }
 
             throw result.ErrorException;
