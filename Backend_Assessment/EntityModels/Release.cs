@@ -9,9 +9,9 @@ namespace Backend_Assessment.EntityModels
         public string Label { get; set; }
         public string Status { get; set; }
         public int TrackCount { get; set; }
-        public List<ReleaseArtist> NameCredit { get; set; }
+        public List<ReleaseArtist> ArtistCredit { get; set; }
     }
-
+    
     public partial class ReleaseArtist
     {
         public string Id { get; set; }
