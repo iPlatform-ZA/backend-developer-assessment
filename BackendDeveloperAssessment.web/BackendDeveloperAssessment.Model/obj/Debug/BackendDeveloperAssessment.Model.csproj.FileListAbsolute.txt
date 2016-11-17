@@ -1,0 +1,7 @@
+C:\sfsjskndksd\StructureIT\backend-developer-assessment\BackendDeveloperAssessment.web\BackendDeveloperAssessment.Model\bin\Debug\BackendDeveloperAssessment.Model.dll
+C:\sfsjskndksd\StructureIT\backend-developer-assessment\BackendDeveloperAssessment.web\BackendDeveloperAssessment.Model\bin\Debug\BackendDeveloperAssessment.Model.pdb
+C:\sfsjskndksd\StructureIT\backend-developer-assessment\BackendDeveloperAssessment.web\BackendDeveloperAssessment.Model\obj\Debug\BackendDeveloperAssessment.Model.csprojResolveAssemblyReference.cache
+C:\sfsjskndksd\StructureIT\backend-developer-assessment\BackendDeveloperAssessment.web\BackendDeveloperAssessment.Model\obj\Debug\BackendDeveloperAssessment.Model.dll
+C:\sfsjskndksd\StructureIT\backend-developer-assessment\BackendDeveloperAssessment.web\BackendDeveloperAssessment.Model\obj\Debug\BackendDeveloperAssessment.Model.pdb
+C:\sfsjskndksd\StructureIT\backend-developer-assessment\BackendDeveloperAssessment.web\BackendDeveloperAssessment.Model\bin\Debug\Newtonsoft.Json.dll
+C:\sfsjskndksd\StructureIT\backend-developer-assessment\BackendDeveloperAssessment.web\BackendDeveloperAssessment.Model\bin\Debug\Newtonsoft.Json.xml

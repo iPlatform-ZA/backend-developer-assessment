@@ -1,0 +1,16 @@
+C:\sfsjskndksd\StructureIT\backend-developer-assessment\BackendDeveloperAssessment.web\BackendDeveloperAssessment.Repository\bin\Debug\BackendDeveloperAssessment.Repository.dll.config
+C:\sfsjskndksd\StructureIT\backend-developer-assessment\BackendDeveloperAssessment.web\BackendDeveloperAssessment.Repository\bin\Debug\BackendDeveloperAssessment.Repository.dll
+C:\sfsjskndksd\StructureIT\backend-developer-assessment\BackendDeveloperAssessment.web\BackendDeveloperAssessment.Repository\bin\Debug\BackendDeveloperAssessment.Repository.pdb
+C:\sfsjskndksd\StructureIT\backend-developer-assessment\BackendDeveloperAssessment.web\BackendDeveloperAssessment.Repository\bin\Debug\BackendDeveloperAssessment.IRepository.dll
+C:\sfsjskndksd\StructureIT\backend-developer-assessment\BackendDeveloperAssessment.web\BackendDeveloperAssessment.Repository\bin\Debug\BackendDeveloperAssessment.Model.dll
+C:\sfsjskndksd\StructureIT\backend-developer-assessment\BackendDeveloperAssessment.web\BackendDeveloperAssessment.Repository\bin\Debug\EntityFramework.dll
+C:\sfsjskndksd\StructureIT\backend-developer-assessment\BackendDeveloperAssessment.web\BackendDeveloperAssessment.Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\sfsjskndksd\StructureIT\backend-developer-assessment\BackendDeveloperAssessment.web\BackendDeveloperAssessment.Repository\bin\Debug\BackendDeveloperAssessment.IRepository.pdb
+C:\sfsjskndksd\StructureIT\backend-developer-assessment\BackendDeveloperAssessment.web\BackendDeveloperAssessment.Repository\bin\Debug\BackendDeveloperAssessment.Model.pdb
+C:\sfsjskndksd\StructureIT\backend-developer-assessment\BackendDeveloperAssessment.web\BackendDeveloperAssessment.Repository\bin\Debug\EntityFramework.xml
+C:\sfsjskndksd\StructureIT\backend-developer-assessment\BackendDeveloperAssessment.web\BackendDeveloperAssessment.Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\sfsjskndksd\StructureIT\backend-developer-assessment\BackendDeveloperAssessment.web\BackendDeveloperAssessment.Repository\obj\Debug\BackendDeveloperAssessment.Repository.csprojResolveAssemblyReference.cache
+C:\sfsjskndksd\StructureIT\backend-developer-assessment\BackendDeveloperAssessment.web\BackendDeveloperAssessment.Repository\obj\Debug\BackendDeveloperAssessment.Repository.dll
+C:\sfsjskndksd\StructureIT\backend-developer-assessment\BackendDeveloperAssessment.web\BackendDeveloperAssessment.Repository\obj\Debug\BackendDeveloperAssessment.Repository.pdb
+C:\sfsjskndksd\StructureIT\backend-developer-assessment\BackendDeveloperAssessment.web\BackendDeveloperAssessment.Repository\bin\Debug\Newtonsoft.Json.dll
+C:\sfsjskndksd\StructureIT\backend-developer-assessment\BackendDeveloperAssessment.web\BackendDeveloperAssessment.Repository\bin\Debug\Newtonsoft.Json.xml
