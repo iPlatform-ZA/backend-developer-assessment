@@ -1,0 +1,6 @@
+C:\sfsjskndksd\StructureIT\backend-developer-assessment\BackendDeveloperAssessment.web\BackendDeveloperAssessment.console\bin\Debug\BackendDeveloperAssessment.console.exe.config
+C:\sfsjskndksd\StructureIT\backend-developer-assessment\BackendDeveloperAssessment.web\BackendDeveloperAssessment.console\obj\Debug\BackendDeveloperAssessment.console.csprojResolveAssemblyReference.cache
+C:\sfsjskndksd\StructureIT\backend-developer-assessment\BackendDeveloperAssessment.web\BackendDeveloperAssessment.console\bin\Debug\BackendDeveloperAssessment.console.exe
+C:\sfsjskndksd\StructureIT\backend-developer-assessment\BackendDeveloperAssessment.web\BackendDeveloperAssessment.console\bin\Debug\BackendDeveloperAssessment.console.pdb
+C:\sfsjskndksd\StructureIT\backend-developer-assessment\BackendDeveloperAssessment.web\BackendDeveloperAssessment.console\obj\Debug\BackendDeveloperAssessment.console.exe
+C:\sfsjskndksd\StructureIT\backend-developer-assessment\BackendDeveloperAssessment.web\BackendDeveloperAssessment.console\obj\Debug\BackendDeveloperAssessment.console.pdb
