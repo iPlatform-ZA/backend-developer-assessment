@@ -28,6 +28,8 @@ namespace Backend.Assessment
             container.Register(typeof(IRepository<>), typeof(Repository<>), Lifestyle.Scoped);
             container.Register<IArtistRepository, ArtistRepository>(Lifestyle.Scoped);
             container.Register<IAliasRepository, AliasRepository>(Lifestyle.Scoped);
+            container.Register<IAlbumRepository, AlbumRepository>(Lifestyle.Scoped);
+
             container.Register<IArtistService, ArtistService>(Lifestyle.Scoped);
 
 

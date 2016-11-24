@@ -6,6 +6,6 @@ namespace Backend.Assessment.Repositories
 {
     public interface IArtistRepository : IRepository<Artist>
     {
-        IEnumerable<Artist> SearchArtist(string criteria, int pageNumber, int pageSize);
+        IEnumerable<Artist> SearchArtist(string criteria);
     }
 }

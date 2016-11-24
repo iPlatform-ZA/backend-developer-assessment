@@ -11,16 +11,18 @@ namespace Backend.Assessment.Services
     {
         private IArtistRepository ArtistRepository { get; set; }
         private IAliasRepository AliasRepository { get; set; }
+        private IAlbumRepository AlbumRepository { get; set; }
 
-        public ArtistService(IArtistRepository artistRepository, IAliasRepository aliasRepository)
+        public ArtistService(IArtistRepository artistRepository, IAliasRepository aliasRepository, IAlbumRepository albumRepository)
         {
             ArtistRepository = artistRepository;
             AliasRepository = aliasRepository;
+            AlbumRepository = albumRepository;
         }
 
         public ArtistResponse Search(string criteria, int pageNumber, int pageSize)
         {
-            var artistResults = ArtistRepository.SearchArtist(criteria, pageNumber, pageSize);
+            var artistResults = ArtistRepository.SearchArtist(criteria);
 
             var artistListResults = artistResults.OrderBy(a => a.Lastname).Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
 
@@ -46,6 +48,17 @@ namespace Backend.Assessment.Services
             artistResponse.NumberOfPages = numberOfpages.ToString();
 
             return artistResponse;
+        }
+
+        public AlbumResponse GetAlbumByArtist(Guid artistId)
+        {
+            var albums = AlbumRepository.GetByArtistId(artistId).ToList();
+
+            var albumResponse = new AlbumResponse();
+
+
+            return albumResponse;
+
         }
 
 

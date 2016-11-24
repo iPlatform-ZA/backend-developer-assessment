@@ -27,10 +27,30 @@ namespace Backend.Assessment.Controllers
             {
                 var searchResults = ArtistService.Search(criteria, pageNumber, pageSize);
 
-                response = Request.CreateResponse(HttpStatusCode.GatewayTimeout, searchResults);
+                response = Request.CreateResponse(HttpStatusCode.OK, searchResults);
             }
             catch (Exception ex)
             {
+                response = Request.CreateResponse(HttpStatusCode.GatewayTimeout, ex);
+            }
+
+            return response;
+        }
+
+        [HttpGet]
+        [Route("artist/{artistId}/albums")]
+        public HttpResponseMessage GetAlbumsByArtist(Guid artistId)
+        {
+            HttpResponseMessage response = null;
+            try
+            {
+                var results = ArtistService.GetAlbumByArtist(artistId);
+
+                response = Request.CreateResponse(HttpStatusCode.OK, results);
+            }
+            catch (Exception ex)
+            {
+
                 response = Request.CreateResponse(HttpStatusCode.GatewayTimeout, ex);
             }
 
