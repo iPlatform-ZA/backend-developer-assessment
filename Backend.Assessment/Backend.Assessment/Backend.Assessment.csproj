@@ -49,6 +49,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MusicBrainz, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MusicBrainz.1.3.0\lib\MusicBrainz.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="SimpleInjector, Version=3.3.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
       <HintPath>..\packages\SimpleInjector.3.3.0\lib\net45\SimpleInjector.dll</HintPath>
       <Private>True</Private>
@@ -221,25 +225,30 @@
     <Compile Include="Controllers\ArtistController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="DTOs\OtherArtistResponse.cs" />
+    <Compile Include="DTOs\ReleaseResponse.cs" />
+    <Compile Include="DTOs\XmlMusicBrainz.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="DTOs\ArtistCollectionResponse.cs" />
+    <Compile Include="DTOs\ArtistResponse.cs" />
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\Album_Artist.cs" />
     <Compile Include="Models\Alias.cs" />
     <Compile Include="Models\Artist.cs" />
-    <Compile Include="DTOs\ArtistCollectionResponse.cs" />
-    <Compile Include="DTOs\ArtistResponse.cs" />
     <Compile Include="Context\BackendContext.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\C__MigrationHistory.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Repositories\AlbumRepository.cs" />
     <Compile Include="Repositories\AliasRepository.cs" />
     <Compile Include="Repositories\ArtistRepository.cs" />
+    <Compile Include="Repositories\IAlbumRepository.cs" />
     <Compile Include="Repositories\IAliasRepository.cs" />
     <Compile Include="Repositories\IArtistRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
@@ -247,6 +256,7 @@
     <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Repositories\UnitOfWork.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="DTOs\AlbumResponse.cs" />
     <Compile Include="Services\ArtistService.cs" />
     <Compile Include="Services\IArtistService.cs" />
     <Compile Include="Startup.cs" />

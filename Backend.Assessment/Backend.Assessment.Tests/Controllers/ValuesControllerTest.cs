@@ -1,13 +1,8 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Web.Http;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Backend.Assessment;
 using Backend.Assessment.Controllers;
-
 namespace Backend.Assessment.Tests.Controllers
 {
     [TestClass]

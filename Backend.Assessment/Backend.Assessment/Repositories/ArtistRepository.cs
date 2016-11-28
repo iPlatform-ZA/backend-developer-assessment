@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using Backend.Assessment.Models;
 using Backend.Assessment.Context;
 using System.Linq;
-using System.Data.SqlClient;
+
 
 namespace Backend.Assessment.Repositories
 {
+    //Repository Layer and Unit of Work used to facilitate integration, unit testing & code reusability
     public class ArtistRepository : Repository<Artist>, IArtistRepository
     {
         public BackendContext BackendContext
@@ -19,6 +19,8 @@ namespace Backend.Assessment.Repositories
         {
         }
 
+        //Repository method called in the service layer by IoC
+        //Returns a list of Artist, IEnumerable used to promote a larger array of options (List,Array, IList etc...) when used
         public IEnumerable<Artist> SearchArtist(string criteria)
         {
             return BackendContext.Artists.Where(a => a.Firstname.Contains(criteria) || a.Lastname.Contains(criteria));

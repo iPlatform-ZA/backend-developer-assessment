@@ -1,10 +1,9 @@
 namespace Backend.Assessment.Context
 {
-    using System;
+    using Models;
     using System.Data.Entity;
 
-    using System.Linq;
-    using Models;
+
     public partial class BackendContext : DbContext
     {
         public BackendContext()
@@ -21,10 +20,6 @@ namespace Backend.Assessment.Context
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Album>()
-                .Property(e => e.year)
-                .HasPrecision(18, 0);
-
             modelBuilder.Entity<Album>()
                 .HasMany(e => e.Album_Artist)
                 .WithRequired(e => e.Album)

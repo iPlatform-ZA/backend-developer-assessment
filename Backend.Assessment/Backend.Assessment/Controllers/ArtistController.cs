@@ -25,12 +25,14 @@ namespace Backend.Assessment.Controllers
 
             try
             {
+                //Pass results to be processed by Service Layer
                 var searchResults = ArtistService.Search(criteria, pageNumber, pageSize);
 
                 response = Request.CreateResponse(HttpStatusCode.OK, searchResults);
             }
             catch (Exception ex)
             {
+                //If crash of any sort, return the exception with a timeout http status
                 response = Request.CreateResponse(HttpStatusCode.GatewayTimeout, ex);
             }
 
@@ -38,19 +40,20 @@ namespace Backend.Assessment.Controllers
         }
 
         [HttpGet]
-        [Route("artist/{artistId}/albums")]
+        [Route("{artistId}/albums")]
         public HttpResponseMessage GetAlbumsByArtist(Guid artistId)
         {
             HttpResponseMessage response = null;
             try
             {
+                //Pass the results to be processed by the Service Layer
                 var results = ArtistService.GetAlbumByArtist(artistId);
 
                 response = Request.CreateResponse(HttpStatusCode.OK, results);
             }
             catch (Exception ex)
             {
-
+                //If crash of any sort, return the exception with a timeout http status
                 response = Request.CreateResponse(HttpStatusCode.GatewayTimeout, ex);
             }
 

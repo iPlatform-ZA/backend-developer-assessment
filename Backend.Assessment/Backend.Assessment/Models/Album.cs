@@ -18,13 +18,15 @@ namespace Backend.Assessment.Models
         public Guid Id { get; set; }
 
         [StringLength(50)]
-        public string name { get; set; }
+        public string Title { get; set; }
 
         [StringLength(50)]
-        public string Genre { get; set; }
+        public string Status { get; set; }
 
-        [Column(TypeName = "numeric")]
-        public decimal? year { get; set; }
+        [StringLength(50)]
+        public string Label { get; set; }
+
+        public int? NumberOfTracks { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Album_Artist> Album_Artist { get; set; }
