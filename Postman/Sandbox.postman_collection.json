@@ -1,0 +1,59 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Sandbox",
+		"_postman_id": "b902ac08-c92c-a27a-9b1c-47854812fe87",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "BackEnd-Assessment",
+			"description": "",
+			"item": [
+				{
+					"name": "Artist-search",
+					"request": {
+						"url": "http://localhost:60833/artist/search/jo/1/2",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Artist-releases",
+					"request": {
+						"url": "http://localhost:60833/artist/55c6eb6e-8388-497c-acaf-dbff584d0c3a/albums",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Artist-releases copy",
+					"request": {
+						"url": "http://musicbrainz.org/ws/2/release/?query=artist:a",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
