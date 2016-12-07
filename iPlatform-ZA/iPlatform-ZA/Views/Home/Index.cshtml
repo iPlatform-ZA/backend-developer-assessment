@@ -1,0 +1,86 @@
+﻿@model IEnumerable<iPlatform_ZA.Models.Artist>
+
+@{
+    ViewBag.Title = "Home";
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/knockout")
+    <script type="text/javascript">
+        @functions{
+                public string TokenHeaderValue()
+                {
+                    string cookieToken, formToken;
+                    AntiForgery.GetTokens(null, out cookieToken, out formToken);
+                    return cookieToken + ":" + formToken;
+                }
+            }
+            function ArtistsViewModel() {
+                var name = this;
+                name.artists = ko.observableArray([]);
+                name.addartist = function () {
+                    $.post("api//artist/search/<search_criteria>/<page_number>/<page_size>",
+                        $("#addArtist").serialize(),
+                        function (value) {
+                            name.artists.push(value);
+                        },
+                          "json");
+                }
+
+
+            }
+            name.removeArtist = function (artist) {
+            $.ajax({
+                type: "DELETE",
+                url: artist.name,
+                success: function () {
+                        name.contacts.remove(artist);
+                    },
+                headers: {
+                        'RequestVerificationToken': '@TokenHeaderValue()'
+                }
+                });
+            }
+
+        $.getJSON("api//artist/search/<search_criteria>/<page_number>/<page_size>", function (data) {
+                name.ArtistsViewModel(data);
+            });
+        ko.applyBindings(new ArtistViewModel());
+    </script>
+}
+<ul id="artists" data-bind="foreach: artists">
+    <li class="ui-widget-content ui-corner-all">
+        <h1 data-bind="text: Name" class="ui-widget-header"></h1>
+        <div><span data-bind="text: $data.ArtistId || 'ArtistId?'"></span></div>
+        <div data-bind="if: $data.Country"><a data-bind="attr: { href: Country }, text: Country"></a></div>
+        <div data-bind="ifnot: $data.Country"><span>Country</span></div>
+        <div data-bind="if: $data.Aliases"><a data-bind="attr: { href: Aliases }, text: Aliases"></a></div>
+        <div data-bind="ifnot: $data.Aliases"><span>Aliases</span></div>
+        <p><a data-bind="attr: { href: name }, click: $root.removeContact" class="removeArtist ui-state-default ui-corner-all">Remove</a></p>
+    </li>
+</ul>
+
+<form id="addContact" data-bind="submit: addContact">
+    <fieldset>
+        <legend>Add New Artist</legend>
+        <ol>
+            <li>
+                <label for="Name">Name</label>
+                <input type="text" name="Name" />
+            </li>
+            <li>
+                <label for="Unique ID">Unique ID</label>
+                <input type="text" name="ID">
+            </li>
+            <li>
+                <label for="Country">Country</label>
+                <input type="text" name="Country" />
+            </li>
+            <li>
+                <label for="Aliases">Aliases</label>
+                <input type="text" name="Aliases" />
+            </li>
+        </ol>
+        <input type="submit" value="Add" />
+    </fieldset>
+</form>
