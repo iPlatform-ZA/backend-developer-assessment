@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLib", "ClassLib\ClassLib.csproj", "{77409A1E-101C-407B-95DA-217DC2314488}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{62890BB0-78D2-4695-AD90-A95A033E3F68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StructITAPI", "StructITAPI\StructITAPI.csproj", "{52EDE9AC-6CCB-4AE9-A347-ED34683700A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77409A1E-101C-407B-95DA-217DC2314488}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77409A1E-101C-407B-95DA-217DC2314488}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77409A1E-101C-407B-95DA-217DC2314488}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77409A1E-101C-407B-95DA-217DC2314488}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62890BB0-78D2-4695-AD90-A95A033E3F68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62890BB0-78D2-4695-AD90-A95A033E3F68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62890BB0-78D2-4695-AD90-A95A033E3F68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62890BB0-78D2-4695-AD90-A95A033E3F68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52EDE9AC-6CCB-4AE9-A347-ED34683700A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52EDE9AC-6CCB-4AE9-A347-ED34683700A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52EDE9AC-6CCB-4AE9-A347-ED34683700A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52EDE9AC-6CCB-4AE9-A347-ED34683700A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
