@@ -17,5 +17,12 @@ namespace StructITAPI.Controllers
         {
             return true;
         }
+
+        [Route("{artistid}/releases")]
+        [HttpGet]
+        public bool Releases(string artistId)
+        {
+            return true;
+        }
     }
 }
