@@ -5,6 +5,9 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.WebPages;
+using ClassLib.Models;
+using Newtonsoft.Json;
 
 namespace StructITAPI.Controllers
 {
@@ -13,9 +16,10 @@ namespace StructITAPI.Controllers
     {
         [Route("Search/{searchCriteria}/{pageNumber}/{pageSize}")]
         [HttpGet]
-        public bool Search(string searchCriteria,string pageNumber,string pageSize)
+        public string Search(string searchCriteria,string pageNumber,string pageSize)
         {
-            return true;
+            SearchResults results = new SearchResults(searchCriteria,pageNumber,pageSize);
+            return JsonConvert.SerializeObject(results);
         }
 
         [Route("{artistid}/releases")]

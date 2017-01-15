@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using ClassLib.Data;
 using ClassLib.Factories;
+using ClassLib.Helpers;
 using ClassLib.interfaces;
 using ClassLib.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json;
 
 namespace UnitTestProject
 {
@@ -23,6 +25,19 @@ namespace UnitTestProject
             {
                 artists.Add(fact.GetObject(artist));
             }
+        }
+
+        [TestMethod]
+        public void SearchArtistTest()
+        {
+            var result = APIHelper.SearchForArtist("John");
+        }
+
+        [TestMethod]
+        public void SearchArtistJsonResultsTest()
+        {
+            SearchResults result = new SearchResults("joh","4","3");
+            var jsonResult = JsonConvert.SerializeObject(result);
         }
     }
 }

@@ -89,10 +89,12 @@
       <DependentUpon>Artists.edmx</DependentUpon>
     </Compile>
     <Compile Include="Factories\ArtistsFactory.cs" />
+    <Compile Include="Helpers\APIHelper.cs" />
     <Compile Include="interfaces\IArtist.cs" />
     <Compile Include="interfaces\IDBEntity.cs" />
     <Compile Include="interfaces\IFactory.cs" />
     <Compile Include="Models\ArtistModel.cs" />
+    <Compile Include="Models\SearchResults.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

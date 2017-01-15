@@ -11,6 +11,6 @@ namespace ClassLib.interfaces
         Guid UniqueId { get; set; }
         string ArtistsName { get; set; }
         string Country { get; set; }
-        string Aliases { get; set; }
+        List<string> Aliases { get; set; }
     }
 }

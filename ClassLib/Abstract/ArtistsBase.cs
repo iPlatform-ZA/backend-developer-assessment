@@ -15,13 +15,22 @@ namespace ClassLib.Abstract
             _uniqueId = artists.UniqueId;
             _artistsName = artists.ArtistsName;
             _country = artists.Country;
-            _aliases = artists.Aliases;
+            _aliases = new List<string>();
+            if (!string.IsNullOrEmpty(artists.Aliases))
+            {
+                foreach (var alias in artists.Aliases.Split(','))
+                {
+                    _aliases.Add(alias);
+                }
+               
+            }
+           
         }
 
         private Guid _uniqueId;
         private string _artistsName;
         private string _country;
-        private string _aliases;
+        private List<string> _aliases;
 
         public Guid UniqueId
         {
@@ -41,7 +50,7 @@ namespace ClassLib.Abstract
             set { _country = value; }
         }
 
-        public string Aliases
+        public List<string> Aliases
         {
             get { return _aliases; }
             set { _aliases = value; }
