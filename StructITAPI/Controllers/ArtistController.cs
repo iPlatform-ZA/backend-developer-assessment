@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.WebPages;
+using ClassLib.Helpers;
 using ClassLib.Models;
 using Newtonsoft.Json;
 
@@ -24,9 +25,10 @@ namespace StructITAPI.Controllers
 
         [Route("{artistid}/releases")]
         [HttpGet]
-        public bool Releases(string artistId)
+        public string Releases(string artistId)
         {
-            return true;
+            return JsonConvert.SerializeObject(APIHelper.GetReleases(artistId));
+            
         }
     }
 }
