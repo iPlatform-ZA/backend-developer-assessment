@@ -18,41 +18,58 @@ namespace ClassLib.Helpers
         public static List<ArtistModel> SearchForArtist(string artist)
         {
             List<ArtistModel> artists = new List<ArtistModel>();
-            ArtistsFactory<IArtist,ArtistModel> artFact = new ArtistsFactory<IArtist, ArtistModel>();
-            using (ArtistsEntities artistsEntities = new ArtistsEntities())
+            try
             {
-                if (artistsEntities.Artists.Any(x => x.ArtistsName.Contains(artist)))
+                ArtistsFactory<IArtist, ArtistModel> artFact = new ArtistsFactory<IArtist, ArtistModel>();
+                using (ArtistsEntities artistsEntities = new ArtistsEntities())
                 {
-                    foreach (var source in artistsEntities.Artists.Where(x=>x.ArtistsName.Contains(artist)))
+                    if (artistsEntities.Artists.Any(x => x.ArtistsName.Contains(artist)))
                     {
-                        artists.Add(artFact.GetObject(source));
+                        foreach (var source in artistsEntities.Artists.Where(x => x.ArtistsName.Contains(artist)))
+                        {
+                            artists.Add(artFact.GetObject(source));
+                        }
                     }
                 }
+                return artists;
             }
-
-            return artists;
+            catch (Exception ex)
+            {
+                
+                throw ex;
+            }
+            
         }
 
         public static List<ReleaseResult> GetReleases(string artistId)
         {
-            List<ReleaseResult> releases = new List<ReleaseResult>();
-            WebClient client = new WebClient();
-            ArtistsFactory<IReleaseResult,ReleaseResult> releaseFact = new ArtistsFactory<IReleaseResult, ReleaseResult>();
-            client.UseDefaultCredentials = true;
-            client.Headers.Add(HttpRequestHeader.UserAgent, "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36");
-            var str = client.OpenRead(new Uri("http://musicbrainz.org/ws/2/release/?query=arid:" + artistId.ToLower()));
-            XDocument xdoc = XDocument.Load(str);
-            var releaseList = xdoc.Root.Descendants().Where(x => x.Name.LocalName == "release-list");
-            foreach (var xElement in releaseList)
+            try
             {
-                var newReleases = xElement.Descendants().Where(x => x.Name.LocalName == "release");
-
-                foreach (var newRelease in newReleases)
+                List<ReleaseResult> releases = new List<ReleaseResult>();
+                WebClient client = new WebClient();
+                ArtistsFactory<IReleaseResult, ReleaseResult> releaseFact = new ArtistsFactory<IReleaseResult, ReleaseResult>();
+                client.UseDefaultCredentials = true;
+                client.Headers.Add(HttpRequestHeader.UserAgent, "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36");
+                var str = client.OpenRead(new Uri("http://musicbrainz.org/ws/2/release/?query=arid:" + artistId.ToLower()));
+                XDocument xdoc = XDocument.Load(str);
+                var releaseList = xdoc.Root.Descendants().Where(x => x.Name.LocalName == "release-list");
+                foreach (var xElement in releaseList)
                 {
-                    releases.Add(releaseFact.GetObject(newRelease));
+                    var newReleases = xElement.Descendants().Where(x => x.Name.LocalName == "release");
+
+                    foreach (var newRelease in newReleases)
+                    {
+                        releases.Add(releaseFact.GetObject(newRelease));
+                    }
                 }
+                return releases;
             }
-            return releases;
+            catch (Exception ex)
+            {
+                
+                throw ex;
+            }
+           
         }
     }
 }
