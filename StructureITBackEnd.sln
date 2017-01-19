@@ -11,6 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StructITAPI", "StructITAPI\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CB2D182F-C83D-4A2A-9544-BBFAF0BA4014}"
 	ProjectSection(SolutionItems) = preProject
+		..\..\Users\fsmit.SP\AppData\Local\Temp\vmware-fsmit\VMwareDnD\f3a44225\BackEndAssessment.docx = ..\..\Users\fsmit.SP\AppData\Local\Temp\vmware-fsmit\VMwareDnD\f3a44225\BackEndAssessment.docx
 		CreateArtistTableWithData.sql = CreateArtistTableWithData.sql
 		CreateDatabaseArtist.sql = CreateDatabaseArtist.sql
 	EndProjectSection

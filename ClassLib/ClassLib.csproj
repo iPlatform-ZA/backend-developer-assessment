@@ -111,6 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Data\Artists.edmx.diagram">
       <DependentUpon>Artists.edmx</DependentUpon>
     </None>
