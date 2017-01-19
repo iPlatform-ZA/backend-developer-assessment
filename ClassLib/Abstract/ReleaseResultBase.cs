@@ -7,6 +7,7 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Xml.XPath;
 using ClassLib.interfaces;
+using ClassLib.Models;
 
 namespace ClassLib.Abstract
 {
@@ -40,6 +41,23 @@ namespace ClassLib.Abstract
                     .Elements()
                     .FirstOrDefault(x => x.Name.LocalName == "track-count")
                     .Value;
+            _otherArtists = new List<ICollaboratingArtist>();
+            if (release.Elements().Any(x => x.Name.LocalName == "artist-credit"))
+            {
+                var artists =
+                    release.Elements()
+                        .FirstOrDefault(x => x.Name.LocalName == "artist-credit")
+                        .Elements()
+                        .Where(x => x.Name.LocalName == "name-credit");
+
+                foreach (var artist in artists)
+                {
+                    var name = artist.Elements().FirstOrDefault(x => x.Name.LocalName == "artist").Elements().FirstOrDefault(x=>x.Name.LocalName == "name").Value;
+                    var id = artist.Elements().FirstOrDefault(x=>x.Name.LocalName == "artist").Attributes().FirstOrDefault(x => x.Name.LocalName == "id").Value;
+                    _otherArtists.Add(new CollaboratingArtist(id,name));
+                }
+            }
+
         }
 
         private string _releaseId;
@@ -47,6 +65,8 @@ namespace ClassLib.Abstract
         private string _status;
         private string _label;
         private string _numberOfTracks;
+        private List<ICollaboratingArtist> _otherArtists;
+
 
         public string ReleaseId
         {
@@ -76,6 +96,12 @@ namespace ClassLib.Abstract
         {
             get { return _numberOfTracks; }
             set { _numberOfTracks = value; }
+        }
+
+        public List<ICollaboratingArtist> OtherArtists
+        {
+            get { return _otherArtists; }
+            set { _otherArtists = value; }
         }
     }
 }

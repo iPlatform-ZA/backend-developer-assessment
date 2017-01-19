@@ -13,6 +13,6 @@ namespace ClassLib.interfaces
         string Status { get; set; }
         string Label { get; set; }
         string NumberOfTracks { get; set; }
-
+       List<ICollaboratingArtist> OtherArtists { get; set; } 
     }
 }

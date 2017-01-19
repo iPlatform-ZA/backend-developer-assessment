@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ArtistsBase.cs" />
+    <Compile Include="Abstract\CollaboratingArtistBase.cs" />
     <Compile Include="Abstract\FactoryBase.cs" />
     <Compile Include="Abstract\ReleaseResultBase.cs" />
     <Compile Include="Data\Artist.cs">
@@ -92,10 +93,12 @@
     <Compile Include="Factories\ArtistsFactory.cs" />
     <Compile Include="Helpers\APIHelper.cs" />
     <Compile Include="interfaces\IArtist.cs" />
+    <Compile Include="interfaces\ICollaboratingArtist.cs" />
     <Compile Include="interfaces\IDBEntity.cs" />
     <Compile Include="interfaces\IFactory.cs" />
     <Compile Include="interfaces\IReleaseResult.cs" />
     <Compile Include="Models\ArtistModel.cs" />
+    <Compile Include="Models\CollaboratingArtist.cs" />
     <Compile Include="Models\ReleaseResult.cs" />
     <Compile Include="Models\SearchResults.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
