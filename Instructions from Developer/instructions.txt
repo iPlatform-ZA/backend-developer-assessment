@@ -1,0 +1,17 @@
+Back End Developer assessment : Caroline Chirenje 26/01/2017
+
+1.On running the code for the first time with WebAp.WebApi as the default project EF automatically creates database WebApiPortal which has an empty table dbo.Artist (Please make sure you point the web config in WebApi.Api to the correct SQL Server Instance)
+2. To populate the table dbo.Artist with the data from the excel worksheet  kindly do the following :
+
+	a).Open the ImportArtistsFromExcel.sql script found in the SQL Scripts folder of this solution and change the Database Path to suit the part where your artists.xlsx file is.
+	b).Run the script to if successful it will show you contects of the 
+		NB : If the error "The 32-bit OLE DB provider "Microsoft.ACE.OLEDB.12.0" cannot be loaded in-process on a 64-bit SQL Server." comes out on runnign the ImportArtistsFromExcel Script please download the driver here and install from command prompt using this command:
+			C:\Users\WEKWACHIRENJE\Downloads\AccessDatabaseEngine_x64.exe" /passive
+			Link : https://www.microsoft.com/en-us/download/details.aspx?id=13255  then run the script again
+
+3.Libraries used : Automapper for automatically mapping Dtos to entities
+		   Ninject,Ninject and Ninject.Web.Common for implementing Dependency Injection
+		     
+
+
+

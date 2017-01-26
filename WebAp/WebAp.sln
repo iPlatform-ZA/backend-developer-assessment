@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAp.Core", "WebApCore\WebAp.Core.csproj", "{28B56306-9104-44AA-B44B-2C6FBBC595D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAp.Infrastructure", "WebAp.Infrastructure\WebAp.Infrastructure.csproj", "{A9F09320-AADE-4865-B55A-7C8E4DB1C51A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAp.WebApi", "WebAp.WebApi\WebAp.WebApi.csproj", "{262313DE-1AF6-4D0C-8EBC-0E91D54400B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28B56306-9104-44AA-B44B-2C6FBBC595D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28B56306-9104-44AA-B44B-2C6FBBC595D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28B56306-9104-44AA-B44B-2C6FBBC595D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28B56306-9104-44AA-B44B-2C6FBBC595D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9F09320-AADE-4865-B55A-7C8E4DB1C51A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9F09320-AADE-4865-B55A-7C8E4DB1C51A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9F09320-AADE-4865-B55A-7C8E4DB1C51A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9F09320-AADE-4865-B55A-7C8E4DB1C51A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{262313DE-1AF6-4D0C-8EBC-0E91D54400B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{262313DE-1AF6-4D0C-8EBC-0E91D54400B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{262313DE-1AF6-4D0C-8EBC-0E91D54400B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{262313DE-1AF6-4D0C-8EBC-0E91D54400B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
