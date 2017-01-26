@@ -9,15 +9,14 @@ using WebApCore.Interfaces;
 
 namespace WebAp.WebApi.Controllers
 {
-    public class ArtistsController : ApiController
+    public class ArtistsController : BaseApiController
 
     {
-        private IArtistRepository _artistrepo;
         private IQueryable<Artist> artistQuery;
-        public ArtistsController(IArtistRepository artistrepo) //Injected the “IArtistRepository” inside “ArtistsController” constructor DI constructor pattern .
+    //Injected the “IArtistRepository” inside “ArtistsController” constructor DI constructor pattern .
+        public ArtistsController(IArtistRepository artistrepo)
+            : base(artistrepo)
         {
-            _artistrepo = artistrepo;
-
         }
 
 
@@ -26,7 +25,7 @@ namespace WebAp.WebApi.Controllers
         [HttpGet, ActionName("GetArtistsByName")]
         public Object search(string artistName)
         {
-            artistQuery = _artistrepo.search(artistName).OrderBy(c => c.Name);
+            artistQuery = ArtistDB.search(artistName).OrderBy(c => c.Name);
             var searchResults = artistQuery.ToList();
             var totalArtists = searchResults.Count();
             IList<ArtistDto> results = Mapper.Map<IList<Artist>, IList<ArtistDto>>(searchResults); // use automapper to map values to dto that we want  user to see
@@ -46,20 +45,24 @@ namespace WebAp.WebApi.Controllers
         // requirement 2 /artist/search/<search_criteria>/<page_number>/<page_size>``` as a GET. 
         #region GetArtistByPagination
         [HttpGet, ActionName("GetArtistByPagination")]
-        public Object Get(string artistName, int pageNumber = 1, int pageSize = 10) // set page to default 1
+        public Object Get(string artistName, int pageNumber = 0 , int pageSize = 1) // set page to default 1
         {
+            if (pageNumber <= 0)
+            {
+                pageNumber = 1; // this allows actual values to be retrieved at  actual values and prevents a negative skip amount 
 
-            artistQuery = _artistrepo.search(artistName).OrderBy(c => c.Name);
-
+            }
+            artistQuery = ArtistDB.search(artistName).OrderBy(c => c.Name);
+             
             var totalArtists = artistQuery.Count(); // gets the number of artists returned by the search
             var mod = totalArtists % pageSize; //retains the number of page left after taking chunk
             var pageCount = (totalArtists / pageSize) + (mod == 0 ? 0 : 1);// returns the number of pages that are returned if result is divided by pagesize
-
-            var searchResults = artistQuery
-            .Skip(pageSize * pageNumber)
-            .Take(pageSize)
-            .ToList();
-
+            var skipAmount = pageSize * (pageNumber - 1); // calculate actual number that has be skipped
+                     var searchResults = artistQuery
+                .Skip(skipAmount)
+                .Take(pageSize)
+                .ToList();
+          
             IList<ArtistDto> results = Mapper.Map<IList<Artist>, IList<ArtistDto>>(searchResults); // use automapper to map values to dto that we want  user to see
 
             return new
@@ -82,7 +85,7 @@ namespace WebAp.WebApi.Controllers
         [HttpGet, ActionName("GetAllArtists")]
         public Object search()
         {
-            artistQuery = _artistrepo.search().OrderBy(c => c.Name);
+            artistQuery = ArtistDB.search().OrderBy(c => c.Name);
             var searchResults = artistQuery.ToList();
             var totalArtists = searchResults.Count();
             IList<ArtistDto> results = Mapper.Map<IList<Artist>, IList<ArtistDto>>(searchResults); // use automapper to map values to dto that we want  user to see
@@ -95,9 +98,6 @@ namespace WebAp.WebApi.Controllers
 
         }
         #endregion
-
-
-
 
     }
 }

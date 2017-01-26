@@ -14,7 +14,7 @@ namespace WebAp.Infrastructure
         {
 
         }
-        public IDbSet<Artist> Artists { get; set; }
+        public IDbSet<Artist> Artists { get; set; } // creates dbo.Arists in Database WebApiPortal
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
