@@ -118,6 +118,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArtistContext.cs" />
+    <Compile Include="Migrations\201701291837169_FirstInitialisation.cs" />
+    <Compile Include="Migrations\201701291837169_FirstInitialisation.Designer.cs">
+      <DependentUpon>201701291837169_FirstInitialisation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\ArtistRepository.cs" />
   </ItemGroup>
@@ -126,6 +131,11 @@
       <Project>{28b56306-9104-44aa-b44b-2c6fbbc595d6}</Project>
       <Name>WebAp.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201701291837169_FirstInitialisation.resx">
+      <DependentUpon>201701291837169_FirstInitialisation.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

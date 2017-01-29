@@ -12,7 +12,6 @@ namespace WebAp.Infrastructure
     {
         public ArtistContext() : base("name=ArtistConnection")
         {
-
         }
         public IDbSet<Artist> Artists { get; set; } // creates dbo.Arists in Database WebApiPortal
 

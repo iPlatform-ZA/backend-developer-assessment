@@ -1,4 +1,4 @@
----Wadzanai Caroline Chirenje Backend Developement Assesment 26/01/2017
+---Wadzanai Caroline Chirenje Backend Development Assesment Structure IT 26/01/2017
 
 --enabling Show Advanced option inorder to enable Ad Hoc Distributed Queries 
 EXEC sp_configure 'Show Advanced Options', 1;
@@ -29,7 +29,7 @@ FROM OPENROWSET('Microsoft.ACE.OLEDB.12.0',
    Database=E:\Import\artists.xlsx', -- change path of the excel sheet to suit yours please
    [Sheet1$])
 )
--- then insert data from the temporary table  into the table Artist  by using  merge statement to do an upsert to avoid duplication
+-- then insert data from the temporary table  into the table Artist  by using  merge statement to do an upsert to avoid duplication if query is run more than once
 MERGE dbo.Artist AS a  
 USING Artists_CTE AS a_temp 
 ON a.Id = a_temp.Id
@@ -38,8 +38,4 @@ WHEN MATCHED THEN
 WHEN NOT MATCHED THEN  
   INSERT (Id, Name, Country,Aliases) VALUES ( a_temp.Id,  a_temp.Name,  a_temp.Country, a_temp.Aliases);
 SELECT * FROM  Artist;
-
-
-
-
 GO
