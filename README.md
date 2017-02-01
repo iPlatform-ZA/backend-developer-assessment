@@ -1,3 +1,11 @@
+
+
+# Database
+
+Database name:  Music
+The script that has the database schema and data is music_db.sql and locate in the db folder
+You can choose to use the .sql or .bak file to restore database
+
 # Technical assessment for backend developer
 
 ## The purpose of the assessment is to test your ability:

@@ -17,6 +17,14 @@ namespace WebAPI.Controllers
         private IModelFactory _modelFactory;
         const int maxPageSize = 20; //Maximum we can display at a time
 
+        
+        //An ideal way would be
+        //public ArtistController(IModelFactory modelFactory, IRepository service)
+        //{
+        //    _service = service;
+        //    _modelFactory = modelFactory;
+        //}
+
         public ArtistController(IModelFactory modelFactory)
         {
             _service = new ArtistRepository( new MusicEntities());
