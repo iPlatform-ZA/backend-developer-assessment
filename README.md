@@ -1,3 +1,18 @@
+
+
+# Database
+
+Database name:  Music
+The script that has the database schema and data is music_db.sql and locate in the db folder
+You can choose to use the .sql or .bak file to restore database
+
+# Developer Server
+* Build projects
+
+# Tested Points (not unit testing)
+* http://localhost:52896/api/artist/65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab/albums 
+* http://localhost:52896/api/artist/search/john/1/3
+
 # Technical assessment for backend developer
 
 ## The purpose of the assessment is to test your ability:

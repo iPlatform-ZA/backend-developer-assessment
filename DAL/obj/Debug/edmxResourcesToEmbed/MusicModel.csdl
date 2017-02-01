@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MusicModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MusicEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Alias" EntityType="MusicModel.Alias" />
+    <EntitySet Name="Artist" EntityType="MusicModel.Artist" />
+    <AssociationSet Name="FK_Alias_Artist" Association="MusicModel.FK_Alias_Artist">
+      <End Role="Artist" EntitySet="Artist" />
+      <End Role="Alias" EntitySet="Alias" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Alias">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ArtistID" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Artist" Relationship="MusicModel.FK_Alias_Artist" FromRole="Alias" ToRole="Artist" />
+  </EntityType>
+  <EntityType Name="Artist">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Alias" Relationship="MusicModel.FK_Alias_Artist" FromRole="Artist" ToRole="Alias" />
+  </EntityType>
+  <Association Name="FK_Alias_Artist">
+    <End Type="MusicModel.Artist" Role="Artist" Multiplicity="1" />
+    <End Type="MusicModel.Alias" Role="Alias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Artist">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Alias">
+        <PropertyRef Name="ArtistID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
